@@ -122,7 +122,7 @@ export default function ServicesCategories() {
                     ? 'bg-primary text-white shadow-lg scale-110' 
                     : 'bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white'}
                 `}>
-                  <img src={discIcon} alt="Icon" className="w-10 h-10 object-contain" />
+                  <service.icon className="w-10 h-10 stroke-[1.5px]" />
                 </div>
 
                 {/* Text Content */}

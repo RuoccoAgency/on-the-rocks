@@ -1,0 +1,59 @@
+You are updating an existing React + TypeScript + Tailwind CSS project for On The Rocks Event & Wedding.
+Do not rebuild the site, only adjust the existing components.
+
+1. Services icons – restore the original ones
+
+In the Services section (the main service cards like “Organizzazione Eventi – Wedding Planner, Eventi Musicali, Intrattenimento Musicale, Battesimi e Comunioni, 18 Anni”):
+
+Remove the current disc/logo image being used as the icon inside the circular background.
+
+Restore the icons that were used before (the original icon set that was already coded in this project – e.g. Lucide / custom service icons).
+
+Keep:
+
+white card background,
+
+subtle shadow,
+
+pink brand color for the icon and hover states.
+
+Do not change titles, descriptions, layout or animations of these cards.
+
+2. Add the full logo image in the navbar
+
+I will provide you with the full logo image (the one with disc + text “On The Rocks Event & Wedding”), for example:
+
+import otrLogo from "@/assets/otr-logo.png";
+
+
+Update the Navbar so that:
+
+On the left side, before or instead of the current text brand name, you display:
+
+the logo image: <img src={otrLogo} alt="On The Rocks Event & Wedding" />
+
+height around 32–40px on desktop, smaller on mobile, keeping aspect ratio.
+
+The logo should be clickable and scroll to the top / home section (same behavior as the current brand link).
+
+Text in the navbar can remain as it is (menu items, etc.), just align them to the right of the logo.
+
+3. Add the full logo image in the footer
+
+Update the Footer component so that:
+
+On the left side of the footer brand text “On The Rocks Event & Wedding”, show the same logo image (otrLogo).
+
+The logo should be smaller than in the navbar (for example 24–32px high) and aligned vertically with the text.
+
+Keep the existing footer layout (links, social icons, copyright), only insert the logo next to the brand name.
+
+4. General rules
+
+Keep all copy in Italian (do not translate any visible text).
+
+Preserve the current colors (black + white + fuchsia/pink) and existing animations.
+
+Make sure the navbar + footer remain fully responsive on mobile, tablet, and desktop.
+
+Apply only these changes and leave the rest of the design and structure as they are.

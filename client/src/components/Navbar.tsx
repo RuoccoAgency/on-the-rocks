@@ -45,10 +45,11 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Area */}
         <Link href="/" className="flex items-center gap-2 group">
-           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${scrolled ? 'text-primary' : 'text-white'}`}>
-             <img src={discIcon} alt="Logo" className="w-full h-full object-contain drop-shadow-md" />
+           <div className={`h-10 md:h-12 w-auto flex items-center justify-center transition-opacity hover:opacity-80`}>
+             <img src={discIcon} alt="On The Rocks Event & Wedding" className="h-full w-auto object-contain drop-shadow-md" />
            </div>
-           <div className="flex flex-col">
+           {/* Text aligned to the right of the logo */}
+           <div className="flex flex-col ml-2">
              <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled ? 'text-black' : 'text-white'}`}>
                ON THE ROCKS
              </span>
