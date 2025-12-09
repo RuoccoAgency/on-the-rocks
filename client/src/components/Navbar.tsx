@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import fullLogo from "@assets/image_1765307786880.png";
+import discIcon from "@assets/download_1765308097320.png";
 
 import { Menu, X } from "lucide-react";
 
@@ -45,8 +45,17 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Area */}
         <Link href="/" className="flex items-center gap-2 group">
-           <div className="h-12 md:h-16 w-auto flex items-center justify-center transition-opacity hover:opacity-80">
-             <img src={fullLogo} alt="On The Rocks Event & Wedding" className="h-full w-auto object-contain" />
+           <div className={`h-10 md:h-12 w-auto flex items-center justify-center transition-opacity hover:opacity-80`}>
+             <img src={discIcon} alt="On The Rocks Event & Wedding" className="h-full w-auto object-contain drop-shadow-md" />
+           </div>
+           {/* Text aligned to the right of the logo */}
+           <div className="flex flex-col ml-2">
+             <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled ? 'text-black' : 'text-white'}`}>
+               ON THE ROCKS
+             </span>
+             <span className="text-primary text-xl font-script leading-none -mt-1 transform -rotate-2 origin-left">
+               Event & Wedding
+             </span>
            </div>
         </Link>
 
