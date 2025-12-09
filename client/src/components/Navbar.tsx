@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import discIcon from "@assets/download_1765308097320.png";
+import logoImg from "@assets/download_1765308097320.png";
 
 import { Menu, X } from "lucide-react";
 
@@ -45,8 +45,12 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Area */}
         <Link href="/" className="flex items-center gap-2 group">
-           <div className={`h-10 md:h-12 w-auto flex items-center justify-center transition-opacity hover:opacity-80`}>
-             <img src={discIcon} alt="On The Rocks Event & Wedding" className="h-full w-auto object-contain drop-shadow-md" />
+           <div className="flex items-center justify-center transition-opacity hover:opacity-80">
+             <img 
+               src={logoImg} 
+               alt="On The Rocks Logo"
+               className="h-10 w-auto object-contain"
+             />
            </div>
            {/* Text aligned to the right of the logo */}
            <div className="flex flex-col ml-2">
@@ -85,7 +89,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={`${scrolled ? 'text-black' : 'text-white'}`}
+          className={`${scrolled ? 'text-black' : 'text-white'} block md:hidden`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

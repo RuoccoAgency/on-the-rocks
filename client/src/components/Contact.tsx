@@ -152,20 +152,22 @@ export default function Contact() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-gray-700">Tipo di Evento</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-white border-gray-200 focus:border-primary h-12">
-                            <SelectValue placeholder="Seleziona un'opzione" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="wedding">Matrimonio</SelectItem>
-                          <SelectItem value="music">Evento Musicale</SelectItem>
-                          <SelectItem value="party">Festa Privata / 18 Anni</SelectItem>
-                          <SelectItem value="corporate">Evento Aziendale</SelectItem>
-                          <SelectItem value="other">Altro</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <div className="relative mb-4">
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-white border-gray-200 focus:border-primary h-12">
+                              <SelectValue placeholder="Seleziona un'opzione" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="w-full rounded-sm border border-input px-4 py-3 text-sm bg-neutral-100 text-foreground shadow-lg relative z-20">
+                            <SelectItem value="wedding">Matrimonio</SelectItem>
+                            <SelectItem value="music">Evento Musicale</SelectItem>
+                            <SelectItem value="party">Festa Privata / 18 Anni</SelectItem>
+                            <SelectItem value="corporate">Evento Aziendale</SelectItem>
+                            <SelectItem value="other">Altro</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}

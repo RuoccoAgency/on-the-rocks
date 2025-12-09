@@ -1,5 +1,5 @@
 import { Instagram, Facebook } from "lucide-react";
-import discIcon from "@assets/image_1765306959124.png";
+import logoImg from "@assets/download_1765308097320.png";
 
 export default function Footer() {
   return (
@@ -10,8 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-4 justify-center md:justify-start mb-4">
-              <div className="h-8 w-auto flex items-center justify-center">
-                 <img src={discIcon} alt="On The Rocks Events & Wedding" className="h-full w-auto object-contain" />
+              <div className="h-10 w-auto flex items-center justify-center">
+                 <img 
+                   src={logoImg} 
+                   alt="On The Rocks Logo" 
+                   className="h-10 w-auto object-contain"
+                 />
               </div>
               <h3 className="text-2xl font-serif font-bold tracking-widest text-black">ON THE ROCKS</h3>
             </div>
