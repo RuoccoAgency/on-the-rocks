@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroBg from "@assets/stock_images/concert_dj_party_eve_a38b2e78.jpg";
+import heroBg from "@assets/stock_images/elegant_wedding_rece_fccf2633.jpg";
 
 export default function Hero() {
   return (
