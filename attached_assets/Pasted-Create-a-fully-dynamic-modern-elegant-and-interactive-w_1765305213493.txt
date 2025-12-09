@@ -1,0 +1,222 @@
+Create a fully dynamic, modern, elegant, and interactive website for an event & entertainment company called On The Rocks Events & Wedding, offering:
+
+Wedding planning
+
+Party & ceremony planning
+
+Customized gadgets
+
+Event consulting
+
+Special effects
+
+Audio & lighting setups
+
+DJ sets
+
+Live music
+
+Musical entertainment
+
+Baptisms & communions
+
+“18 Special” events
+
+Corporate & theater events
+
+🎨 Design Requirements
+
+Elegant, luxury-style aesthetic
+
+Main colors: black, white, gold
+
+Clean premium typography (serif + sans-serif combination)
+
+Large spacing, minimal layout, extremely high-end look
+
+Buttons in gold with shining/sheen hover effect
+
+Smooth animations and micro-interactions everywhere
+
+A website that is dynamic to use, meaning:
+
+interactive components
+
+smooth transitions
+
+animated section reveals
+
+engaging user flow
+
+intuitive navigation
+
+Fully responsive on all devices
+
+🧩 Sections to Include
+1️⃣ Hero Section (Cinematic & Dynamic)
+
+Fullscreen background (image or muted video)
+
+Black/gold gradient overlay
+
+Luxury serif headline with fade-in
+
+Subtitle with soft upward motion
+
+Two buttons:
+
+Request a Quote (gold button with sheen animation)
+
+View Services (outline gold button)
+
+Smooth scroll indicator
+
+2️⃣ About Section
+
+Animated introduction text
+
+Elegant timeline or step-by-step animated “How We Work”
+
+Fade-in images on scroll
+
+3️⃣ Services Section (Dynamic Cards)
+
+Create animated service cards for:
+
+Venue Styling & Decoration
+
+Personalized Gadgets
+
+Event Consultancy
+
+Special Effects
+
+Invitations & Stationery
+
+Weddings
+
+DJ Set & Entertainment
+
+Concert Audio/Lighting
+
+Live Music
+
+Baptisms & Communions
+
+“Special 18” Events
+
+Each card should have:
+
+Hover animation
+
+Gold glow border
+
+Subtle scale-up effect
+
+“Learn More” hover motion
+
+4️⃣ Dynamic Gallery
+
+Masonry or grid layout
+
+Smooth hover zoom + gold overlay
+
+Lightbox viewer with animations
+
+Works perfectly on mobile
+
+5️⃣ Why Choose Us Section
+
+Animated icons representing:
+
+Professionalism
+
+Creativity
+
+Experience
+
+Reliability
+
+With gold micro-interactions on hover.
+
+6️⃣ Testimonials (Animated Carousel)
+
+Auto-play fade transitions
+
+Manual navigation arrows
+
+Elegant quote styling
+
+7️⃣ Contact Section
+
+Stylish form with floating labels
+
+Gold accent borders
+
+Dynamic focus animations
+
+Add company info:
+
+Address: Corso Umberto I, 11, 84020 Aquara SA
+Phone (landline only): 393 209 3010
+Hours: Open 24/7
+
+Include a large gold button: Send Request.
+
+Add an embedded Google Maps iframe inside a rounded white container.
+
+8️⃣ Footer
+
+Minimal black footer
+
+Gold logo
+
+Social icons with subtle gold hover glow
+
+⚙️ Technical Requirements
+
+Use the following stack:
+
+React
+
+TailwindCSS
+
+Framer Motion for all animations
+
+Modular components structure
+
+Smooth scroll, parallax elements, fade-in on scroll
+
+Transition effects between sections
+
+Gold sheen animation for premium feel
+
+Responsive & optimized
+
+📦 Files to Generate
+
+Please generate the full project structure, including:
+
+Navbar.jsx (with transparent → solid on scroll effect)
+
+Hero.jsx
+
+About.jsx
+
+Services.jsx
+
+Gallery.jsx
+
+Testimonials.jsx
+
+ContactForm.jsx
+
+Footer.jsx
+
+App.jsx
+
+/assets folder with placeholder images
+
+The website must feel luxury, dynamic, elegant, and extremely smooth to navigate, with rich animations and interactions.
+
+If you want, I can also prepare a dark gold version, a minimal version, or even add custom transitions and sound-reactive animations.
