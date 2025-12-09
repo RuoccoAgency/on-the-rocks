@@ -1,0 +1,128 @@
+Create a new Services Section with a premium, elegant layout using React + Tailwind + Framer Motion, inspired by luxury event agencies.
+
+The design style must be:
+
+Background: #000 black
+
+Text: white with gold accents (#d4af37)
+
+Icons gold
+
+Large spacing, high-end luxury feel
+
+Smooth animations (fade-in, hover glow, card lift, section reveal)
+
+Perfectly responsive
+
+Very clean, minimal, organized
+
+🎨 STRUCTURE REQUIRED
+
+Create 5 main category cards:
+
+Organizzazione Eventi – Wedding Planner
+
+Eventi Musicali
+
+Intrattenimento Musicale
+
+Battesimi e Comunioni
+
+18 Anni
+
+Each main card must:
+
+Be large, elegant, centered
+
+Have gold icon + title
+
+On click (or hover), expand or reveal a dropdown with the subcategories
+
+Subcategories listed with:
+
+small gold bullet
+
+subtle animation
+
+short description
+
+📌 SUBCATEGORIES (Insert exactly these)
+1️⃣ Organizzazione Eventi – Wedding Planner
+
+Allestimento e valorizzazione location
+
+Gadget personalizzati
+
+Servizio di consulenza eventi
+
+Effetti speciali
+
+Inviti e partecipazioni
+
+Tutto per il tuo matrimonio
+
+2️⃣ Eventi Musicali
+
+Feste di piazza
+
+DJ management & booking
+
+Artisti per eventi
+
+Organizzazione eventi musicali
+
+3️⃣ Intrattenimento Musicale
+
+DJ Set / Animazione
+
+Allestimenti per concerti (audio/luci)
+
+Live Music (band, cantanti, orchestra)
+
+4️⃣ Battesimi e Comunioni
+
+Una Comunione Elegante
+
+Il Battesimo Perfetto
+
+5️⃣ 18 Anni
+
+Special 18 – organizzazione evento completo
+
+🧩 COMPONENT REQUIREMENTS
+
+Create a component:
+
+ServicesCategories.jsx
+
+With:
+
+Section title: Exclusive Services (gold serif font)
+
+5 luxury cards in a responsive grid
+
+On hover: gold border glow, slight scale
+
+On expand: smooth framer-motion dropdown
+
+Each card must include:
+
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(212,175,55,0.3)" }}
+  transition={{ duration: 0.4 }}
+  className="bg-black border border-zinc-800 rounded-xl p-8 text-left"
+>
+
+🎯 FINAL RESULT MUST LOOK LIKE
+
+5 big elegant cards
+
+Each acting like a "category container"
+
+When clicked → reveals subcategories
+
+Perfect luxury black/gold design
+
+Much cleaner, more professional than the current overloaded grid
