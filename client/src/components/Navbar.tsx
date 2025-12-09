@@ -16,11 +16,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#home" },
+    { name: "Chi siamo", href: "#about" },
+    { name: "Servizi", href: "#services" },
+    { name: "Esperienze & Eventi", href: "#gallery" },
+    { name: "Contatti", href: "#contact" },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -64,7 +64,7 @@ export default function Navbar() {
             onClick={(e) => scrollToSection(e, "#contact")}
             className="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-bold"
           >
-            Get a Quote
+            Richiedi un preventivo
           </a>
         </div>
 

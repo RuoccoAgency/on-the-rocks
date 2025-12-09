@@ -30,10 +30,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
         >
           <span className="text-primary text-sm uppercase tracking-[0.2em] font-bold block mb-4">
-            Testimonials
+            Dicono di Noi
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-white">
-            Client <span className="text-primary italic">Love</span>
+            L'amore dei <span className="text-primary italic">Clienti</span>
           </h2>
         </motion.div>
 

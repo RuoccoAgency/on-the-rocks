@@ -22,7 +22,7 @@ export default function Gallery() {
             Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl font-serif text-white">
-            Captured <span className="text-primary italic">Moments</span>
+            Momenti <span className="text-primary italic">Catturati</span>
           </h2>
         </motion.div>
 

@@ -48,13 +48,13 @@ export default function Contact() {
              viewport={{ once: true }}
           >
             <span className="text-primary text-sm uppercase tracking-[0.2em] font-bold block mb-4">
-              Get in Touch
+              Contattaci
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">
-              Let's Plan Your <span className="text-primary italic">Event</span>
+              Pianifichiamo il tuo <span className="text-primary italic">Evento</span>
             </h2>
             <p className="text-white/60 mb-12 text-lg">
-              Ready to create something extraordinary? Contact us for a consultation or quote.
+              Pronto a creare qualcosa di straordinario? Contattaci per una consulenza o un preventivo.
             </p>
 
             <div className="space-y-8">
@@ -63,7 +63,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Visit Us</h4>
+                  <h4 className="text-white font-serif text-xl mb-1">Vienici a trovare</h4>
                   <p className="text-white/50">Corso Umberto I, 11,<br />84020 Aquara SA</p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Call Us</h4>
+                  <h4 className="text-white font-serif text-xl mb-1">Chiamaci</h4>
                   <p className="text-white/50">393 209 3010</p>
                 </div>
               </div>
@@ -83,8 +83,8 @@ export default function Contact() {
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Opening Hours</h4>
-                  <p className="text-white/50">Open 24/7</p>
+                  <h4 className="text-white font-serif text-xl mb-1">Orari di apertura</h4>
+                  <p className="text-white/50">Aperto 24/7</p>
                 </div>
               </div>
             </div>
@@ -115,9 +115,9 @@ export default function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Name</FormLabel>
+                      <FormLabel className="text-white/80">Nome</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
+                        <Input placeholder="Mario Rossi" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -130,7 +130,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="text-white/80">Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
+                        <Input placeholder="mario@esempio.com" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -141,9 +141,9 @@ export default function Contact() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Phone</FormLabel>
+                      <FormLabel className="text-white/80">Telefono</FormLabel>
                       <FormControl>
-                        <Input placeholder="+1 234 567 890" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
+                        <Input placeholder="+39 393 209 3010" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -154,9 +154,9 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Details</FormLabel>
+                      <FormLabel className="text-white/80">Dettagli</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell us about your event..." {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 min-h-[150px]" />
+                        <Textarea placeholder="Parlaci del tuo evento..." {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 min-h-[150px]" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -166,7 +166,7 @@ export default function Contact() {
                   type="submit" 
                   className="w-full bg-primary text-black font-bold uppercase tracking-widest h-14 hover:bg-primary/90 transition-all text-sm"
                 >
-                  Send Request <Send className="w-4 h-4 ml-2" />
+                  Invia Richiesta <Send className="w-4 h-4 ml-2" />
                 </Button>
               </form>
             </Form>

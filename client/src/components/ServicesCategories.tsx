@@ -15,11 +15,11 @@ const servicesData = [
     id: 1,
     title: "Organizzazione Eventi – Wedding Planner",
     icon: HeartHandshake,
-    description: "Creating your perfect day with meticulous attention to detail.",
+    description: "Creare il tuo giorno perfetto con meticolosa attenzione ai dettagli.",
     subcategories: [
-      { name: "Allestimento e valorizzazione location", desc: "Venue styling & decoration" },
+      { name: "Allestimento e valorizzazione", desc: "Venue styling & decoration" },
       { name: "Gadget personalizzati", desc: "Customized favors & gifts" },
-      { name: "Servizio di consulenza eventi", desc: "Expert event consulting" },
+      { name: "Servizio di consulenza", desc: "Expert event consulting" },
       { name: "Effetti speciali", desc: "Cold sparks, fog, confetti" },
       { name: "Inviti e partecipazioni", desc: "Luxury stationery & invites" },
       { name: "Tutto per il tuo matrimonio", desc: "Complete wedding packages" },
@@ -29,19 +29,20 @@ const servicesData = [
     id: 2,
     title: "Eventi Musicali",
     icon: Music,
-    description: "Large scale musical events and artist management.",
+    description: "Grandi eventi musicali e gestione artisti.",
     subcategories: [
       { name: "Feste di piazza", desc: "Public festivals & town events" },
       { name: "DJ management & booking", desc: "Top tier DJ talent" },
-      { name: "Artisti per eventi", desc: "Performers & entertainers" },
+      { name: "Artisti", desc: "Performers & entertainers" },
       { name: "Organizzazione eventi musicali", desc: "Full concert production" },
+      { name: "Official management eventi", desc: "" } // Added missing item
     ]
   },
   {
     id: 3,
     title: "Intrattenimento Musicale",
     icon: Mic2,
-    description: "Live performances and high-quality audio setups.",
+    description: "Performance dal vivo e allestimenti audio di alta qualità.",
     subcategories: [
       { name: "DJ Set / Animazione", desc: "Party atmosphere & hosting" },
       { name: "Allestimenti per concerti", desc: "Professional audio/lighting rigs" },
@@ -52,19 +53,19 @@ const servicesData = [
     id: 4,
     title: "Battesimi e Comunioni",
     icon: Baby,
-    description: "Celebrating family milestones with grace and joy.",
+    description: "Celebrare i traguardi familiari con grazia e gioia.",
     subcategories: [
-      { name: "Una Comunione Elegante", desc: "Sophisticated communion parties" },
-      { name: "Il Battesimo Perfetto", desc: "Beautiful baptism receptions" },
+      { name: "Una comunione elegante", desc: "Sophisticated communion parties" },
+      { name: "Il battesimo perfetto", desc: "Beautiful baptism receptions" },
     ]
   },
   {
     id: 5,
     title: "18 Anni",
     icon: PartyPopper,
-    description: "The ultimate coming-of-age celebration.",
+    description: "La celebrazione definitiva per il passaggio all'età adulta.",
     subcategories: [
-      { name: "Special 18", desc: "Organizzazione evento completo" },
+      { name: "Tutto per i tuoi 18 ANNI", desc: "Organizzazione evento completo" },
     ]
   }
 ];
@@ -90,10 +91,10 @@ export default function ServicesCategories() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-primary text-sm uppercase tracking-[0.3em] font-bold block mb-4">
-            Curated Experiences
+            Esperienze Curate
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white">
-            Exclusive <span className="text-primary italic">Services</span>
+            Servizi <span className="text-primary italic">Esclusivi</span>
           </h2>
         </motion.div>
 

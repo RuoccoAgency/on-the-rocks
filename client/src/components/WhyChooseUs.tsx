@@ -4,23 +4,23 @@ import { Award, Lightbulb, ShieldCheck, Clock } from "lucide-react";
 const features = [
   {
     icon: ShieldCheck,
-    title: "Reliability",
-    description: "We deliver on our promises with absolute precision and punctuality."
+    title: "Affidabilità",
+    description: "Manteniamo le promesse con assoluta precisione e puntualità."
   },
   {
     icon: Lightbulb,
-    title: "Creativity",
-    description: "Innovative concepts that transform ordinary spaces into magical experiences."
+    title: "Creatività",
+    description: "Concept innovativi che trasformano spazi ordinari in esperienze magiche."
   },
   {
     icon: Award,
-    title: "Excellence",
-    description: "Award-winning service quality and attention to the finest details."
+    title: "Eccellenza",
+    description: "Servizi di qualità premiata e attenzione ai minimi dettagli."
   },
   {
     icon: Clock,
-    title: "Experience",
-    description: "Years of expertise in managing high-profile events and weddings."
+    title: "Esperienza",
+    description: "Anni di esperienza nella gestione di eventi e matrimoni di alto profilo."
   }
 ];
 

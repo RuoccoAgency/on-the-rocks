@@ -20,14 +20,14 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <span className="block text-primary text-sm md:text-base uppercase tracking-[0.4em] mb-4 font-bold">
-            Experience The Extraordinary
+            Vivi lo Straordinario
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif text-white mb-6 leading-tight">
             On The Rocks <br />
             <span className="italic text-white/90">Events & Wedding</span>
           </h1>
           <p className="text-white/70 max-w-2xl mx-auto text-lg md:text-xl font-light mb-10 leading-relaxed">
-            Curating unforgettable moments with premium entertainment, bespoke styling, and flawless execution.
+            Creiamo momenti indimenticabili con intrattenimento esclusivo, stile su misura ed esecuzione impeccabile.
           </p>
 
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
@@ -37,15 +37,15 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-primary text-black font-bold uppercase tracking-widest text-sm hover:bg-primary/90 transition-colors shadow-[0_0_20px_rgba(212,175,55,0.4)]"
             >
-              Request a Quote
+              Prenota una consulenza
             </motion.a>
             <motion.a
-              href="#services"
+              href="#gallery"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border border-white/30 text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-colors backdrop-blur-sm"
             >
-              View Services
+              Guarda la nostra collezione
             </motion.a>
           </div>
         </motion.div>

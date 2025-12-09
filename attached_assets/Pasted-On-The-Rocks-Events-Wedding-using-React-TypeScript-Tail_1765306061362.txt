@@ -1,0 +1,209 @@
+On The Rocks Events & Wedding
+
+using React + TypeScript + Tailwind CSS + Framer Motion.
+
+⚠️ IMPORTANT RULE
+
+All website text, headings, buttons, descriptions, and paragraphs MUST be written in ITALIAN.
+No English text should appear in the UI.
+The prompt is in English ONLY to instruct the system — but the final website content must be 100% Italian.
+
+🎨 1. Style & Branding Requirements
+
+The site must look luxurious, modern, elegant, and dynamic, ideal for:
+
+Event planning
+
+Wedding planning
+
+Music events
+
+Live entertainment
+
+Special effects
+
+Ceremonies
+
+Use this visual style:
+
+Color palette: Black (#000), Gold (#d4af37), White (#ffffff)
+
+Typography: Serif for titles (luxury), clean sans-serif for text
+
+Animations:
+
+Smooth fade-ins and slide-ups for scroll
+
+Hover animations on cards and buttons
+
+Soft glowing gold highlights
+
+Motion-based transitions (Framer Motion)
+
+Layout: Minimal, premium, spacious, high contrast
+
+The website must feel dynamic to use — smooth scroll, animated cards, animated menu, and section reveal effects.
+
+🏷️ 2. Insert This "About" Text in Italian (MUST REMAIN EXACTLY AS GIVEN)
+
+Create an “About / Chi Siamo” section using the following Italian text exactly as written (do NOT translate or modify it):
+
+Da On The Rocks Events & Wedding
+"Ogni evento rappresenta qualcosa di unico, fondamentale per noi è contribuire a renderlo tale! Con questo spirito, l’On The Rocks nasce nel 2012 dal desiderio di sviluppare un modo innovativo di gestione di tutto ciò che interessa i servizi per lo spettacolo. Per noi, al di là del singolo elemento, è la totalità del servizio che riesce a valorizzare al meglio ogni singolo evento. Per riuscire nel nostro intento, rivolgendoci a privati ed aziende, offriamo una vasta gamma di soluzioni, dando forma alle idee con la passione e professionalità che da sempre contribuiscono a farci distinguere. Accompagniamo il cliente alla completa realizzazione dell’evento che per noi si riassume in due concetti fondamentali.. ESPERIENZE ed EMOZIONI."
+
+About Section Requirements:
+
+Black background
+
+Gold accent line
+
+Large serif Italian heading
+
+Paragraph displayed in 2–3 columns on desktop, 1 column on mobile
+
+Smooth fade-in animation
+
+📌 3. Navbar Requirements
+
+Create a fixed top navbar with:
+
+Menu items (ALL IN ITALIAN):
+
+Home
+
+Chi siamo
+
+Servizi
+
+Esperienze & Eventi
+
+Contatti
+
+Right side button:
+
+“Richiedi un preventivo”
+
+Gold background
+
+Black text
+
+Soft glow hover effect
+
+Smooth scroll to “Contatti” section
+
+Navbar becomes white with shadow when scrolling.
+
+🧩 4. Services Section – Main Categories + Subcategories
+
+Create a “Servizi” grid with 5 main service cards (luxury black boxes with gold icons):
+
+MAIN CATEGORIES (Italian, DO NOT TRANSLATE):
+
+Organizzazione Eventi – Wedding Planner
+
+Eventi Musicali
+
+Intrattenimento Musicale
+
+Battesimi e Comunioni
+
+18 Anni
+
+Each card:
+
+Gold icon
+
+Title (Italian)
+
+Short Italian description
+
+On hover/click: expand with Framer Motion to show sub-services
+
+SUBCATEGORIES (use exactly these, in Italian):
+Organizzazione Eventi – Wedding Planner
+
+Allestimento e valorizzazione
+
+Gadget personalizzati
+
+Servizio di consulenza
+
+Effetti speciali
+
+Inviti e partecipazioni
+
+Tutto per il tuo matrimonio
+
+Eventi Musicali
+
+Feste di piazza
+
+Official management eventi
+
+Artisti
+
+Organizzazione eventi musicali
+
+Intrattenimento Musicale
+
+DJ Set / Animazione
+
+Allestimenti per concerti
+
+Live Music
+
+Battesimi e Comunioni
+
+Una comunione elegante
+
+Il battesimo perfetto
+
+18 Anni
+
+Tutto per i tuoi 18 ANNI
+
+All expansions must animate smoothly.
+
+📸 5. Hero Section
+
+Create a full-screen hero with:
+
+Background video or image of events / concerts / lights
+
+Dark overlay
+
+Large serif Italian heading
+
+Subtitle in Italian describing emotions and experiences
+
+2 buttons:
+
+“Prenota una consulenza” (gold)
+
+“Guarda la nostra collezione” (outlined gold or white)
+
+Fade + slow zoom animation
+
+🗺️ 6. Contact Section
+
+Include:
+
+Phone number: 393 209 3010
+
+Address: Corso Umberto I, 11, 84020 Aquara SA
+
+Gold Google Maps embedded iframe
+
+Contact form (tutti i campi in italiano)
+
+🧱 7. Global Behavior
+
+Fully responsive (mobile-first)
+
+Smooth scroll
+
+Framer Motion for all animated sections
+
+Tailwind for layout and styling
+
+Minimal but luxurious UI
