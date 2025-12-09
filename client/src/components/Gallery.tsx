@@ -18,7 +18,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 bg-black text-white">
+    <section id="gallery" className="py-24 bg-white text-black">
       <div className="container mx-auto px-6">
         <motion.div 
           className="text-center mb-16"
@@ -29,7 +29,7 @@ export default function Gallery() {
           <span className="text-primary text-sm uppercase tracking-[0.2em] font-bold block mb-4">
             Il Nostro Portfolio
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black">
             Esperienze & <span className="text-primary font-script">Eventi</span>
           </h2>
         </motion.div>

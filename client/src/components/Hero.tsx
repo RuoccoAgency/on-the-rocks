@@ -51,16 +51,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        <span className="text-white/70 text-[10px] uppercase tracking-widest">Scorri</span>
-        <div className="w-[2px] h-12 bg-gradient-to-b from-primary to-transparent" />
-      </motion.div>
     </section>
   );
 }

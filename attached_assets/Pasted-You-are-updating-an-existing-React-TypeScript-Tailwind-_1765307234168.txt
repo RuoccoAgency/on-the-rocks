@@ -1,0 +1,161 @@
+You are updating an existing React + TypeScript + Tailwind CSS project for On The Rocks Event & Wedding.
+Do NOT rebuild everything from scratch, just adjust the existing components and styles.
+Brand recap
+
+
+Main colors:
+
+
+Fuchsia/pink from the logo: #e31672 (or sample from the logo)
+
+
+Black: #050505 / very dark grey for sections
+
+
+White: #ffffff for backgrounds and text where needed
+
+
+
+
+Style: elegant, modern, minimal, with smooth animations.
+
+
+
+1. Services accordion – change dark panel background
+Currently, when a service category opens, the body of the accordion uses a solid black background.
+Update this so that:
+
+
+The accordion header (the top card with icon + title) keeps its current look (white card with pink border + shadow).
+
+
+The accordion content panel (where sub-services are listed) uses a light background, either:
+
+
+pure white #ffffff, or
+
+
+very light grey #f7f7f7,
+with a subtle top border in pink.
+
+
+
+
+Visually the effect should be:
+
+
+Parent card white,
+
+
+Inside panel white/light grey so it’s clearly readable and still part of the same block,
+
+
+Keep the pink accents (bullets, icons, hover) as they are.
+
+
+Keep all current animations (expand/collapse with Framer Motion) but make transitions smooth (ease + 0.25–0.35s).
+
+2. Replace the round icon with the “disc” image everywhere
+Right now, service cards use a generic round icon (white circle) at the left/top.
+Replace that circle icon with the disc from the logo:
+
+
+Import the disc asset, for example:
+import discIcon from "@/assets/disc-icon.png";
+
+
+
+In the Services accordion headers and in any other place where that circle icon is used (for example in service cards or feature icons), replace the <Icon /> / <div className="rounded-full ..."> with:
+
+
+a small <img src={discIcon} />
+
+
+size around 48x48 on desktop, 40x40 on mobile,
+
+
+circular container if needed, but the graphic must be the disc.
+
+
+
+
+Ensure the disc inherits the pink brand color (if the PNG is white, you can use a pink background circle behind it).
+
+
+Do this consistently for all service sections, so the brand disc replaces the generic circle icon everywhere.
+
+3. Remove the “scroll / SCORRI” indicator from the hero
+In the hero section there is a scroll indicator with the text “SCORRI” and a vertical pink line.
+
+
+Completely remove this scroll indicator (both text and line) from the hero component.
+
+
+Do not replace it with anything else.
+
+
+Make sure hero layout and centering of the main content (headline, buttons) remain unchanged.
+
+
+
+4. Experiences section background must be white
+The section “Esperienze & Eventi” / “Esperienze” currently has a black background, while the rest of the site is white.
+Change this so that:
+
+
+The background color of the Experiences section is white (#ffffff), consistent with the rest of the website.
+
+
+Text colors:
+
+
+Main titles and body text should use dark text (text-foreground or #111111).
+
+
+Keep the pink accent only for highlighted words (e.g. “Eventi”) and small details.
+
+
+
+
+Cards / portfolio items (photos) keep their existing layout, hover zoom, and animation effects, but now sit on a white background with enough spacing and subtle shadows to keep the gallery elegant.
+
+
+
+5. General notes
+
+
+All visible text must remain in Italian (do not translate any UI copy to English).
+
+
+Keep the design clean, responsive and animated, but do not change the overall structure (hero, services, experiences, contacts).
+
+
+Only modify the relevant components:
+
+
+Hero: remove scroll indicator.
+
+
+Services/Accordion: new light background + disc icon replacement.
+
+
+Any shared Icon component: switch to disc image if that circle is reused.
+
+
+Experiences/Portfolio section: background white and adjusted text colors.
+
+
+
+
+After applying these changes, the site should:
+
+
+look lighter and more premium,
+
+
+use the disc logo as a consistent brand icon,
+
+
+have a white Experiences section consistent with the rest of the layout.
+
+

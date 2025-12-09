@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Disc } from "lucide-react";
+import discIcon from "@assets/image_1765306959124.png";
+
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,8 +45,8 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Area */}
         <Link href="/" className="flex items-center gap-2 group">
-           <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors ${scrolled ? 'border-primary text-primary' : 'border-white text-white'}`}>
-             <Disc className={`w-6 h-6 animate-spin-slow`} />
+           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${scrolled ? 'text-primary' : 'text-white'}`}>
+             <img src={discIcon} alt="Logo" className="w-full h-full object-contain drop-shadow-md" />
            </div>
            <div className="flex flex-col">
              <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled ? 'text-black' : 'text-white'}`}>

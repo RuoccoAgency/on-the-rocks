@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import discIcon from "@assets/image_1765306959124.png";
+
 import { 
   HeartHandshake, 
   Music, 
@@ -9,8 +11,6 @@ import {
   ChevronDown,
   ArrowRight
 } from "lucide-react";
-
-// Data Structure
 const servicesData = [
   {
     id: 1,
@@ -122,7 +122,7 @@ export default function ServicesCategories() {
                     ? 'bg-primary text-white shadow-lg scale-110' 
                     : 'bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white'}
                 `}>
-                  <service.icon className="w-10 h-10 stroke-[1.5px]" />
+                  <img src={discIcon} alt="Icon" className="w-10 h-10 object-contain" />
                 </div>
 
                 {/* Text Content */}
@@ -155,9 +155,9 @@ export default function ServicesCategories() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="bg-black text-white"
+                    className="bg-[#f7f7f7] text-black"
                   >
-                    <div className="px-8 pb-10 md:px-32 md:pb-12 pt-8 border-t border-white/10">
+                    <div className="px-8 pb-10 md:px-32 md:pb-12 pt-8 border-t border-primary/20">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12">
                         {service.subcategories.map((sub, idx) => (
                           <motion.div
@@ -165,12 +165,12 @@ export default function ServicesCategories() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="flex items-center gap-3 group/item p-3 rounded-lg hover:bg-white/5 transition-colors cursor-default"
+                            className="flex items-center gap-3 group/item p-3 rounded-lg hover:bg-white transition-colors cursor-default"
                           >
-                            <span className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                            <span className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                                <ArrowRight className="w-4 h-4" />
                             </span>
-                            <span className="text-white text-lg font-medium group-hover/item:text-primary transition-colors">
+                            <span className="text-black text-lg font-medium group-hover/item:text-primary transition-colors">
                               {sub.name}
                             </span>
                           </motion.div>
