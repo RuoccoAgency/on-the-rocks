@@ -10,14 +10,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen text-white overflow-x-hidden">
+    <div className="bg-white min-h-screen text-black overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />
       <ServicesCategories />
-      <WhyChooseUs />
       <Gallery />
-      <Testimonials />
       <Contact />
       <Footer />
     </div>

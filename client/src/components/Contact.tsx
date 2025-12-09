@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -7,13 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email"),
-  phone: z.string().min(5, "Phone is required"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "Il nome è richiesto"),
+  email: z.string().email("Email non valida"),
+  phone: z.string().min(5, "Il telefono è richiesto"),
+  eventType: z.string().min(1, "Seleziona un tipo di evento"),
+  message: z.string().min(10, "Il messaggio deve essere di almeno 10 caratteri"),
 });
 
 export default function Contact() {
@@ -24,6 +26,7 @@ export default function Contact() {
       name: "",
       email: "",
       phone: "",
+      eventType: "",
       message: "",
     },
   });
@@ -31,14 +34,14 @@ export default function Contact() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: "Request Sent",
-      description: "We will get back to you shortly!",
+      title: "Richiesta Inviata",
+      description: "Ti ricontatteremo al più presto!",
     });
     form.reset();
   }
 
   return (
-    <section id="contact" className="py-24 bg-black relative">
+    <section id="contact" className="py-24 bg-white relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Info Side */}
@@ -50,54 +53,44 @@ export default function Contact() {
             <span className="text-primary text-sm uppercase tracking-[0.2em] font-bold block mb-4">
               Contattaci
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">
-              Pianifichiamo il tuo <span className="text-primary italic">Evento</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-black mb-8 leading-tight">
+              Inizia a Pianificare <br/>
+              <span className="text-primary font-script">Il Tuo Evento</span>
             </h2>
-            <p className="text-white/60 mb-12 text-lg">
-              Pronto a creare qualcosa di straordinario? Contattaci per una consulenza o un preventivo.
+            <p className="text-gray-600 mb-12 text-lg">
+              Siamo pronti ad ascoltare le tue idee e trasformarle in realtà. Contattaci per un preventivo personalizzato.
             </p>
 
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Vienici a trovare</h4>
-                  <p className="text-white/50">Corso Umberto I, 11,<br />84020 Aquara SA</p>
+                  <h4 className="text-black font-serif text-xl mb-1">Dove Siamo</h4>
+                  <p className="text-gray-500">Corso Umberto I, 11,<br />84020 Aquara SA</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Chiamaci</h4>
-                  <p className="text-white/50">393 209 3010</p>
+                  <h4 className="text-black font-serif text-xl mb-1">Telefono</h4>
+                  <p className="text-gray-500">393 209 3010</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Clock className="w-5 h-5" />
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-xl mb-1">Orari di apertura</h4>
-                  <p className="text-white/50">Aperto 24/7</p>
+                  <h4 className="text-black font-serif text-xl mb-1">Email</h4>
+                  <p className="text-gray-500">info@ontherocks.it</p>
                 </div>
               </div>
-            </div>
-            
-            <div className="mt-12 w-full h-64 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-white/10">
-               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.656916568164!2d15.207856315396554!3d40.444988979361715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133e8d7a1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sCorso%20Umberto%20I%2C%2011%2C%2084020%20Aquara%20SA%2C%20Italy!5e0!3m2!1sen!2sus!4v1625581234567!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{border:0}} 
-                allowFullScreen={true} 
-                loading="lazy"
-              ></iframe>
             </div>
           </motion.div>
 
@@ -106,65 +99,95 @@ export default function Contact() {
              initial={{ opacity: 0, x: 30 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
-             className="bg-[#0a0a0a] p-8 md:p-12 border border-white/5"
+             className="bg-gray-50 p-8 md:p-12 rounded-2xl shadow-xl"
           >
              <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white/80">Nome</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Mario Rossi" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-700">Nome</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Il tuo nome" {...field} className="bg-white border-gray-200 focus:border-primary h-12" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-700">Telefono</FormLabel>
+                        <FormControl>
+                          <Input placeholder="+39 ..." {...field} className="bg-white border-gray-200 focus:border-primary h-12" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Email</FormLabel>
+                      <FormLabel className="text-gray-700">Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="mario@esempio.com" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
+                        <Input placeholder="latua@email.com" {...field} className="bg-white border-gray-200 focus:border-primary h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
-                  name="phone"
+                  name="eventType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Telefono</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+39 393 209 3010" {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 h-12" />
-                      </FormControl>
+                      <FormLabel className="text-gray-700">Tipo di Evento</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="bg-white border-gray-200 focus:border-primary h-12">
+                            <SelectValue placeholder="Seleziona un'opzione" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="wedding">Matrimonio</SelectItem>
+                          <SelectItem value="music">Evento Musicale</SelectItem>
+                          <SelectItem value="party">Festa Privata / 18 Anni</SelectItem>
+                          <SelectItem value="corporate">Evento Aziendale</SelectItem>
+                          <SelectItem value="other">Altro</SelectItem>
+                        </SelectContent>
+                      </Select>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Dettagli</FormLabel>
+                      <FormLabel className="text-gray-700">Messaggio</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Parlaci del tuo evento..." {...field} className="bg-white/5 border-white/10 text-white focus:border-primary/50 min-h-[150px]" />
+                        <Textarea placeholder="Descrivi le tue esigenze..." {...field} className="bg-white border-gray-200 focus:border-primary min-h-[120px]" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary text-black font-bold uppercase tracking-widest h-14 hover:bg-primary/90 transition-all text-sm"
+                  className="w-full bg-primary text-white font-bold uppercase tracking-widest h-14 hover:bg-primary/90 transition-all text-sm rounded-lg shadow-lg shadow-primary/20"
                 >
                   Invia Richiesta <Send className="w-4 h-4 ml-2" />
                 </Button>

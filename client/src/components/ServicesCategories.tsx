@@ -6,7 +6,8 @@ import {
   Mic2, 
   Baby, 
   PartyPopper, 
-  ChevronDown 
+  ChevronDown,
+  ArrowRight
 } from "lucide-react";
 
 // Data Structure
@@ -35,7 +36,7 @@ const servicesData = [
       { name: "DJ management & booking", desc: "Top tier DJ talent" },
       { name: "Artisti", desc: "Performers & entertainers" },
       { name: "Organizzazione eventi musicali", desc: "Full concert production" },
-      { name: "Official management eventi", desc: "" } // Added missing item
+      { name: "Official management eventi", desc: "Full management" }
     ]
   },
   {
@@ -78,10 +79,7 @@ export default function ServicesCategories() {
   };
 
   return (
-    <section id="services" className="py-24 bg-black relative overflow-hidden">
-      {/* Background Ambience */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
-
+    <section id="services" className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           className="text-center mb-20"
@@ -91,63 +89,61 @@ export default function ServicesCategories() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-primary text-sm uppercase tracking-[0.3em] font-bold block mb-4">
-            Esperienze Curate
+            Cosa Facciamo
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white">
-            Servizi <span className="text-primary italic">Esclusivi</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black">
+            I Nostri <span className="text-primary font-script">Servizi</span>
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="grid grid-cols-1 gap-6 max-w-5xl mx-auto">
           {servicesData.map((service) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               layout
               className={`
-                group relative bg-[#080808] border rounded-sm overflow-hidden transition-all duration-500
-                ${expandedId === service.id ? 'border-primary/40 bg-[#0c0c0c]' : 'border-white/5 hover:border-primary/20'}
+                group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500
+                ${expandedId === service.id ? 'ring-2 ring-primary shadow-primary/20' : ''}
               `}
             >
               {/* Card Header (Clickable) */}
               <button
                 onClick={() => toggleExpand(service.id)}
-                className="w-full p-8 md:p-10 flex items-center justify-between text-left focus:outline-none"
+                className="w-full p-8 md:p-10 flex flex-col md:flex-row items-center md:items-center text-center md:text-left gap-6 md:gap-8 relative z-10 bg-white"
               >
-                <div className="flex items-center gap-6 md:gap-8">
-                  {/* Icon Container */}
-                  <div className={`
-                    w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border transition-all duration-500
-                    ${expandedId === service.id 
-                      ? 'border-primary bg-primary text-black' 
-                      : 'border-white/10 bg-white/5 text-primary group-hover:border-primary/50 group-hover:text-primary'}
-                  `}>
-                    <service.icon className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5px]" />
-                  </div>
+                {/* Icon Container */}
+                <div className={`
+                  w-20 h-20 flex items-center justify-center rounded-full transition-all duration-500 shrink-0
+                  ${expandedId === service.id 
+                    ? 'bg-primary text-white shadow-lg scale-110' 
+                    : 'bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white'}
+                `}>
+                  <service.icon className="w-10 h-10 stroke-[1.5px]" />
+                </div>
 
-                  {/* Text Content */}
-                  <div>
-                    <h3 className={`
-                      text-xl md:text-2xl font-serif transition-colors duration-300 mb-2
-                      ${expandedId === service.id ? 'text-primary' : 'text-white group-hover:text-primary'}
-                    `}>
-                      {service.title}
-                    </h3>
-                    <p className="text-white/40 text-sm md:text-base font-light tracking-wide">
-                      {service.description}
-                    </p>
-                  </div>
+                {/* Text Content */}
+                <div className="flex-grow">
+                  <h3 className={`
+                    text-2xl md:text-3xl font-serif font-bold transition-colors duration-300 mb-2
+                    ${expandedId === service.id ? 'text-primary' : 'text-black group-hover:text-primary'}
+                  `}>
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm md:text-base font-light tracking-wide">
+                    {service.description}
+                  </p>
                 </div>
 
                 {/* Chevron */}
                 <div className={`
-                  w-10 h-10 flex items-center justify-center rounded-full border border-white/5 transition-all duration-500
-                  ${expandedId === service.id ? 'rotate-180 bg-white/10 text-primary' : 'text-white/30 group-hover:text-primary'}
+                  w-12 h-12 flex items-center justify-center rounded-full border border-gray-100 transition-all duration-500 shrink-0
+                  ${expandedId === service.id ? 'rotate-180 bg-primary text-white border-primary' : 'text-gray-400 group-hover:text-primary group-hover:border-primary'}
                 `}>
-                  <ChevronDown className="w-5 h-5" />
+                  <ChevronDown className="w-6 h-6" />
                 </div>
               </button>
 
@@ -159,30 +155,24 @@ export default function ServicesCategories() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="bg-black text-white"
                   >
-                    <div className="px-8 pb-10 md:px-32 md:pb-12 pt-0">
-                      <div className="h-[1px] w-full bg-white/5 mb-8" />
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+                    <div className="px-8 pb-10 md:px-32 md:pb-12 pt-8 border-t border-white/10">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12">
                         {service.subcategories.map((sub, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="flex items-start gap-4 group/item"
+                            transition={{ delay: idx * 0.05 }}
+                            className="flex items-center gap-3 group/item p-3 rounded-lg hover:bg-white/5 transition-colors cursor-default"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
-                            <div>
-                              <h4 className="text-white text-lg font-medium group-hover/item:text-primary transition-colors duration-300">
-                                {sub.name}
-                              </h4>
-                              {sub.desc && (
-                                <p className="text-white/30 text-xs uppercase tracking-wider mt-1">
-                                  {sub.desc}
-                                </p>
-                              )}
-                            </div>
+                            <span className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                               <ArrowRight className="w-4 h-4" />
+                            </span>
+                            <span className="text-white text-lg font-medium group-hover/item:text-primary transition-colors">
+                              {sub.name}
+                            </span>
                           </motion.div>
                         ))}
                       </div>
@@ -190,15 +180,6 @@ export default function ServicesCategories() {
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {/* Gold Glow Overlay on Hover */}
-              <div className={`
-                absolute inset-0 pointer-events-none transition-opacity duration-700
-                ${expandedId === service.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
-              `}>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-transparent opacity-20" />
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-50" />
-              </div>
             </motion.div>
           ))}
         </div>

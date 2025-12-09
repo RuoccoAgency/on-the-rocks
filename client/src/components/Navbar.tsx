@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Disc } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,16 +34,26 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/90 backdrop-blur-md py-4 shadow-lg border-b border-white/10" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-white shadow-lg py-3 text-black" 
+          : "bg-transparent py-6 text-white"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-serif font-bold tracking-widest text-white">
-          ON THE ROCKS
-          <span className="text-primary block text-xs tracking-[0.3em] font-sans font-normal mt-1">
-            EVENTS & WEDDING
-          </span>
+        {/* Logo Area */}
+        <Link href="/" className="flex items-center gap-2 group">
+           <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors ${scrolled ? 'border-primary text-primary' : 'border-white text-white'}`}>
+             <Disc className={`w-6 h-6 animate-spin-slow`} />
+           </div>
+           <div className="flex flex-col">
+             <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled ? 'text-black' : 'text-white'}`}>
+               ON THE ROCKS
+             </span>
+             <span className="text-primary text-xl font-script leading-none -mt-1 transform -rotate-2 origin-left">
+               Event & Wedding
+             </span>
+           </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -53,16 +63,18 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="text-sm uppercase tracking-widest text-white/80 hover:text-primary transition-colors relative group"
+              className={`text-sm uppercase tracking-widest transition-colors relative group font-medium ${
+                scrolled ? 'text-black/80 hover:text-primary' : 'text-white/90 hover:text-primary'
+              }`}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, "#contact")}
-            className="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 uppercase text-xs tracking-widest font-bold"
+            className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300 uppercase text-xs tracking-widest font-bold shadow-lg shadow-primary/30"
           >
             Richiedi un preventivo
           </a>
@@ -70,7 +82,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className={`${scrolled ? 'text-black' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +96,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black border-t border-white/10 overflow-hidden"
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden shadow-xl"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -92,11 +104,18 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-white/80 hover:text-primary text-lg font-serif"
+                  className="text-black/80 hover:text-primary text-lg font-serif"
                 >
                   {link.name}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, "#contact")}
+                className="mt-4 px-6 py-3 bg-primary text-white text-center rounded-full font-bold uppercase tracking-widest text-xs"
+              >
+                Richiedi un preventivo
+              </a>
             </div>
           </motion.div>
         )}

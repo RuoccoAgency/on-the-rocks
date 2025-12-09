@@ -6,17 +6,12 @@
 @theme inline {
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Montserrat", sans-serif;
+  --font-script: "Great Vibes", cursive;
 
-  --color-gold-50: #fbf8eb;
-  --color-gold-100: #f5edcf;
-  --color-gold-200: #ead89f;
-  --color-gold-300: #deb966;
-  --color-gold-400: #d4af37; /* Base Gold */
-  --color-gold-500: #b89228;
-  --color-gold-600: #96701d;
-  --color-gold-700: #78561a;
-  --color-gold-800: #63461d;
-  --color-gold-900: #553c1e;
+  /* Brand Colors from Logo */
+  --color-brand-magenta: #D90A6C; /* Vibrant Fuchsia/Magenta */
+  --color-brand-black: #000000;
+  --color-brand-gray: #f8f9fa;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -39,36 +34,36 @@
 }
 
 :root {
-  /* Dark Luxury Theme Default */
-  --background: 0 0% 4%; /* #0a0a0a - Rich Black */
-  --foreground: 45 20% 95%; /* Off-white */
+  /* Updated to White/Magenta/Black Theme */
+  --background: 0 0% 100%; /* White */
+  --foreground: 0 0% 0%;   /* Black */
 
-  --card: 0 0% 7%;
-  --card-foreground: 45 20% 95%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
 
-  --popover: 0 0% 7%;
-  --popover-foreground: 45 20% 95%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
 
-  --primary: 46 65% 52%; /* Gold #d4af37 */
-  --primary-foreground: 0 0% 0%;
+  --primary: 332 91% 45%; /* #D90A6C Magenta */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 0 0% 12%;
-  --secondary-foreground: 45 20% 95%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 0%;
 
-  --muted: 0 0% 12%;
-  --muted-foreground: 0 0% 60%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
 
-  --accent: 46 65% 52%;
-  --accent-foreground: 0 0% 0%;
+  --accent: 332 91% 45%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 62% 30%;
-  --destructive-foreground: 45 20% 95%;
+  --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 15%;
-  --input: 0 0% 15%;
-  --ring: 46 65% 52%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 332 91% 45%;
 
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -84,18 +79,18 @@
 }
 
 @layer utilities {
-  .text-gold-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#d4af37] via-[#f1d06e] to-[#d4af37];
+  .text-magenta-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D90A6C] to-[#b00857];
   }
-  .bg-gold-gradient {
-    @apply bg-gradient-to-r from-[#d4af37] via-[#f1d06e] to-[#d4af37];
+  .bg-magenta-gradient {
+    @apply bg-gradient-to-r from-[#D90A6C] to-[#b00857];
   }
-  .border-gold-glow {
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
-    border-color: rgba(212, 175, 55, 0.3);
+  .border-magenta-glow {
+    box-shadow: 0 0 10px rgba(217, 10, 108, 0.1);
+    border-color: rgba(217, 10, 108, 0.3);
   }
-  .hover-gold-glow:hover {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-    border-color: rgba(212, 175, 55, 0.6);
+  .hover-magenta-glow:hover {
+    box-shadow: 0 0 20px rgba(217, 10, 108, 0.2);
+    border-color: rgba(217, 10, 108, 0.6);
   }
 }

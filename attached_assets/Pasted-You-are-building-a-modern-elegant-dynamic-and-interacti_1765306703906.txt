@@ -1,0 +1,197 @@
+You are building a modern, elegant, dynamic, and interactive website for:
+
+On The Rocks Event & Wedding
+
+using React + TypeScript + Tailwind CSS + Framer Motion.
+
+⚠️ All website text must be in ITALIAN.
+No English copy in the UI, only Italian.
+
+1. Branding & Colors (from the logo image)
+
+Use a visual identity based on the logo you see (vinyl icon + “On The Rocks Event & Wedding”):
+
+Primary color: vibrant fuchsia/magenta (from the script text “Event & Wedding”)
+
+Secondary color: black (from “ON THE ROCKS”)
+
+Backgrounds: white and very light grey, with some dark/black sections for contrast
+
+Accents: use magenta for buttons, highlights, icons, lines, and hover effects
+
+Typography:
+
+Serif / elegant font for big headings (similar vibe to the logo “ONTHEROCKS”)
+
+Handwritten / script feel for some sub-headings (to recall the “Event & Wedding” text)
+
+Clean sans-serif for body text
+
+The site must feel dynamic to use: smooth scrolling, hover animations, transitions, and interactive sections.
+
+2. About Section (use this Italian text)
+
+Create a “Chi Siamo” section and insert this text exactly as written in Italian:
+
+Da On The Rocks Events & Wedding
+"Ogni evento rappresenta qualcosa di unico, fondamentale per noi è contribuire a renderlo tale! Con questo spirito, l’On The Rocks nasce nel 2012 dal desiderio di sviluppare un modo innovativo di gestione di tutto ciò che interessa i servizi per lo spettacolo. Per noi, al di là del singolo elemento, è la totalità del servizio che riesce a valorizzare al meglio ogni singolo evento. Per riuscire nel nostro intento, rivolgendoci a privati ed aziende, offriamo una vasta gamma di soluzioni, dando forma alle idee con la passione e professionalità che da sempre contribuiscono a farci distinguere. Accompagniamo il cliente alla completa realizzazione dell’evento che per noi si riassume in due concetti fondamentali.. ESPERIENZE ed EMOZIONI."
+
+Layout: white or very light background, magenta accent line, large heading, smooth fade/slide animations.
+
+3. Navbar
+
+Fixed top navbar with logo on the left (placeholder image for now) and these menu items in Italian:
+
+Home
+
+Chi siamo
+
+Servizi
+
+Esperienze & Eventi
+
+Contatti
+
+On the right, a rounded magenta button:
+
+Label: “Richiedi un preventivo”
+
+Magenta background, white text, soft glow/scale on hover
+
+Scrolls smoothly to the contact section
+
+When scrolling, navbar gets white background, subtle shadow, and darker text.
+
+4. Services – Main Cards + Sub-services
+
+Create a Services section with 5 main magenta/black cards. Each card is clickable/expandable (Framer Motion) and shows sub-services inside.
+
+Main categories (titles MUST be in Italian):
+
+Organizzazione Eventi – Wedding Planner
+
+Eventi Musicali
+
+Intrattenimento Musicale
+
+Battesimi e Comunioni
+
+18 Anni
+
+Each main card shows:
+
+Icon (line icon in magenta)
+
+Title
+
+Short Italian description
+
+On click/hover, expand with animation to reveal sub-services as a list or mini-tags.
+
+Sub-services (use these, in Italian):
+
+Organizzazione Eventi – Wedding Planner
+
+Allestimento e valorizzazione
+
+Gadget personalizzati
+
+Servizio di consulenza
+
+Effetti speciali
+
+Inviti e partecipazioni
+
+Tutto per il tuo matrimonio
+
+Eventi Musicali
+
+Feste di piazza
+
+Official management eventi
+
+Artisti
+
+Organizzazione eventi musicali
+
+Intrattenimento Musicale
+
+DJ Set / Animazione
+
+Allestimenti per concerti
+
+Live Music
+
+Battesimi e Comunioni
+
+Una comunione elegante
+
+Il battesimo perfetto
+
+18 Anni
+
+Tutto per i tuoi 18 ANNI
+
+Design them with black cards, magenta icons, white text, and animated hover effects.
+
+5. Hero Section
+
+Full-width hero at the top:
+
+Background image/video of events, luci, palchi, matrimoni, ecc.
+
+Dark overlay
+
+Big Italian heading about creating esperienze and emozioni
+
+Subheading explaining that they manage events, music shows, weddings, etc.
+
+Two buttons:
+
+“Prenota una consulenza” (magenta, primary)
+
+“Scopri i nostri servizi” (outline black or magenta)
+
+All hero text in white, with magenta details; animate with Framer Motion (fade + slight slide).
+
+6. Esperienze & Eventi Section
+
+A section that visually showcases:
+
+Eventi musicali
+
+Dj set
+
+Concerti
+
+Wedding setup
+
+Battesimi / comunioni / 18 anni
+
+Use cards or tiles with hover zoom, magenta overlay, and captions in Italian.
+
+7. Contatti
+
+Contact section with:
+
+Phone: 393 209 3010
+
+Indirizzo: Corso Umberto I, 11, 84020 Aquara SA
+
+Simple contact form (Nome, Email, Telefono, Tipo di evento, Messaggio) – all labels in Italian
+
+Magenta submit button: “Invia richiesta”
+
+Optional embedded Google Map placeholder.
+
+8. Technical & UX
+
+Use Tailwind CSS for layout and theming
+
+Use Framer Motion for scroll animations, card expansions, button hover micro-animations
+
+Fully responsive (mobile, tablet, desktop)
+
+Smooth scrolling between sections
+
+Code structure with reusable components (Navbar, Hero, Services, About, Esperienze, Contatti, Footer)
