@@ -21,95 +21,98 @@ import innovativeImg from "@assets/innovative_ideas.png";
 
 const services = [
     {
-        title: "Servizi Wedding",
+        title: "Servizi per i Matrimoni",
         image: weddingImg,
         subservices: [
+            "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
             "Consulenza Wedding Planner",
-            "Partecipazioni e Wedding Stationery",
+            "Inviti e Partecipazioni",
             "Gadget Personalizzati",
-            "Allestimento e Scenografie",
+            "Allestimento Sala",
             "Allestimento Taglio Torta",
-            "Sweet Table e Confettata",
-            "DJ Set e Animazione",
-            "Angolo Open Bar"
+            "Confettata",
+            "Intrattenimento Musicale",
+            "Artisti",
+            "Dj Set - Animazione",
+            "Effetti Speciali",
+            "APEriWedding - Open Bar"
         ],
-        description: "Il tuo matrimonio da sogno, perfettamente orchestrato dalla prima consulenza all'ultimo ballo.",
+        description: "Il tuo matrimonio da sogno, perfettamente orchestrato in ogni dettaglio tecnico ed emozionale.",
         slug: "wedding-services"
     },
     {
-        title: "Organizzazione Eventi",
+        title: "Organizzazione e Pianificazione Eventi",
         image: eventPlanningImg,
         subservices: [
-            "Design e Progettazione Eventi",
-            "Ricerca Location",
-            "Gestione Budget",
-            "Coordinamento e Timing",
-            "Supporto Amministrativo"
+            "Struttura e Progettazione Evento",
+            "Selezione Location",
+            "Analisi spese e piano di Budget",
+            "Gestione e timing intero evento",
+            "Disbrigo pratiche"
         ],
-        description: "Pianificazione professionale per eventi di ogni scala, assicurando che ogni dettaglio rispecchi la tua visione.",
+        description: "Pianificazione professionale e logistica completa per eventi aziendali e privati.",
         slug: "event-planning"
     },
     {
-        title: "Service e Produzione Spettacoli",
+        title: "Servizi per lo Spettacolo",
         image: showProductionImg,
         subservices: [
-            "Noleggio Audio e Luci",
-            "Allestimento Palco",
-            "Installazioni Luci Scenografiche"
+            "Noleggio e Montaggio impianti audio e luci",
+            "Noleggio e montaggio scenografie e luci architetturali",
+            "Noleggio e montaggio palchi"
         ],
-        description: "Eccellenza tecnologica in audio, luci e strutture per performance indimenticabili.",
+        description: "Service tecnico di alta qualità con attrezzature all'avanguardia per ogni tipo di spettacolo.",
         slug: "show-production"
     },
     {
         title: "Agenzia Musicale",
         image: musicAgencyImg,
         subservices: [
-            "Intrattenimento per Matrimoni",
-            "Eventi Privati",
-            "Eventi Aziendali",
-            "Feste di Piazza e Festival",
-            "Animazione per Bambini"
+            "Intrattenimento Wedding, Eventi Privati ed Eventi aziendali",
+            "Intrattenimento per Feste di Piazza",
+            "Intrattenimento ed animazione per bambini"
         ],
-        description: "Curiamo la colonna sonora perfetta e l'intrattenimento per ogni pubblico e occasione.",
+        description: "Direzione artistica e gestione musicale per rendere unico ogni momento del tuo evento.",
         slug: "music-agency"
     },
     {
         title: "Artisti",
         image: artistsImg,
-        subservices: [
-            "Cover Band",
-            "Live Band",
-            "Orchestre Spettacolo",
-            "Gruppi Musica Popolare"
+        groupedSubservices: [
+            { label: "TOP", items: ["Tartaglia Aneuro", "Valerio Jovine"] },
+            { label: "COVER BAND", items: ["The Best of Pooh", "VascoVer Band", "Oro (Mango Cover Band)", "Il Nostro Canto Libero (Battisti Cover Band)", "Canzone (Lucio Dalla Cover Band)"] },
+            { label: "ORCHESTRE SPETTACOLO", items: ["MusicaMania"] },
+            { label: "LIVE SHOW", items: ["NaltroSound", "Unusual Live Band"] },
+            { label: "FOLK E POPOLARE", items: ["Musicastoria", "I Valcalore", "Kiepò"] }
         ],
-        description: "Accesso esclusivo a performer d'élite, band e gruppi artistici per eventi di alto impatto.",
+        description: "Performance d'eccellenza con i migliori artisti e band del panorama nazionale.",
         slug: "artists"
     },
     {
-        title: "Marketing e Comunicazione",
+        title: "Marketing, Comunicazione e Sviluppo Grafico",
         image: marketingImg,
         subservices: [
-            "Sviluppo Grafico",
-            "Promozione Eventi",
-            "Comunicazione Sponsor"
+            "Sviluppiamo ogni tua idea.. la rendiamo reale graficamente",
+            "Promozione dell'evento",
+            "Comunicazione con Sponsor e Fornitori"
         ],
-        description: "Branding strategico e promozione per garantire che il tuo evento raggiunga il pubblico giusto.",
+        description: "Sviluppiamo ogni tua idea.. la rendiamo reale graficamente e ci occupiamo della promozione nonché della comunicazione.",
         slug: "marketing-communication"
     },
     {
         title: "Idee Innovative",
         image: innovativeImg,
         subservices: [
-            "Concept Creativi per Eventi",
-            "Sviluppo di Nuove Idee"
+            "Hai voglia di sviluppare un’idea innovativa?",
+            "Sviluppala insieme a noi.."
         ],
-        description: "Superiamo i confini con concetti unici e lungimiranti che rendono il tuo evento eccezionale.",
+        description: "Creatività senza limiti per trasformare concetti visionari in realtà spettacolari.",
         slug: "innovative-ideas"
     }
 ];
 
 export default function FeaturedServices() {
-    const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+    const [selectedService, setSelectedService] = useState<any | null>(null);
 
     return (
         <section id="services" className="py-24 bg-white">
@@ -122,7 +125,7 @@ export default function FeaturedServices() {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="text-primary text-sm uppercase tracking-[0.3em] font-bold block mb-4">
-                        La Nostra Esperienza
+                        La Nostra Eccellenza
                     </span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-6">
                         I Nostri <span className="text-primary font-script">Servizi</span>
@@ -174,11 +177,11 @@ export default function FeaturedServices() {
             </div>
 
             <Dialog open={!!selectedService} onOpenChange={(open) => !open && setSelectedService(null)}>
-                <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden bg-white border-none shadow-2xl">
+                <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden bg-white border-none shadow-2xl max-h-[90vh] overflow-y-auto scrollbar-hide">
                     {selectedService && (
                         <div className="flex flex-col">
                             {/* Modal Banner */}
-                            <div className="relative h-48 md:h-64 overflow-hidden">
+                            <div className="relative h-48 md:h-64 overflow-hidden shrink-0">
                                 <img
                                     src={selectedService.image}
                                     alt={selectedService.title}
@@ -189,7 +192,7 @@ export default function FeaturedServices() {
 
                             <div className="px-8 pb-10 -mt-12 relative z-10">
                                 <DialogHeader className="mb-6">
-                                    <DialogTitle className="text-3xl md:text-4xl font-serif text-black mb-2">
+                                    <DialogTitle className="text-3xl md:text-4xl font-serif text-black mb-2 leading-tight">
                                         {selectedService.title}
                                     </DialogTitle>
                                     <DialogDescription className="text-gray-600 text-base italic">
@@ -197,40 +200,59 @@ export default function FeaturedServices() {
                                     </DialogDescription>
                                 </DialogHeader>
 
-                                <div className="space-y-6">
+                                <div className="space-y-8">
                                     <div>
                                         <h4 className="text-primary text-xs uppercase tracking-[0.2em] font-bold mb-4">Cosa offriamo</h4>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                            {selectedService.subservices.map((sub, i) => (
-                                                <motion.div
-                                                    key={i}
-                                                    initial={{ opacity: 0, x: -10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: i * 0.05 }}
-                                                    className="flex items-center gap-3 text-gray-700 bg-gray-50 p-2.5 rounded-lg border border-gray-100"
-                                                >
-                                                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                                                    <span className="text-sm font-medium">{sub}</span>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+
+                                        {selectedService.groupedSubservices ? (
+                                            <div className="space-y-6">
+                                                {selectedService.groupedSubservices.map((group: any, idx: number) => (
+                                                    <div key={idx} className="bg-gray-50/50 p-4 rounded-xl border border-gray-100">
+                                                        <h5 className="text-black text-sm font-bold uppercase tracking-widest mb-3 border-b border-primary/10 pb-2">{group.label}</h5>
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                                            {group.items.map((item: string, i: number) => (
+                                                                <div key={i} className="flex items-center gap-2 text-gray-700">
+                                                                    <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />
+                                                                    <span className="text-sm">{item}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                                {selectedService.subservices?.map((sub: string, i: number) => (
+                                                    <motion.div
+                                                        key={i}
+                                                        initial={{ opacity: 0, x: -10 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        transition={{ delay: i * 0.05 }}
+                                                        className="flex items-center gap-3 text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100"
+                                                    >
+                                                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                                                        <span className="text-sm font-medium">{sub}</span>
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
 
-                                    <div className="pt-4 flex justify-between items-center border-t border-gray-100">
+                                    <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-100">
                                         <Button
-                                            className="bg-magenta-gradient hover:shadow-lg transition-all duration-300 text-white rounded-full px-8 py-6 h-auto text-base font-bold group"
+                                            className="w-full md:w-auto bg-magenta-gradient hover:shadow-lg transition-all duration-300 text-white rounded-full px-10 py-6 h-auto text-base font-bold group"
                                             asChild
                                         >
-                                            <a href={`/services/${selectedService.slug}`}>
-                                                Scopri di più
+                                            <a href="#contact" onClick={() => setSelectedService(null)}>
+                                                Contattaci ora
                                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                             </a>
                                         </Button>
                                         <button
                                             onClick={() => setSelectedService(null)}
-                                            className="text-gray-400 hover:text-black transition-colors font-medium text-sm"
+                                            className="text-gray-400 hover:text-black transition-colors font-medium text-sm py-2"
                                         >
-                                            Chiudi
+                                            Torna ai servizi
                                         </button>
                                     </div>
                                 </div>
