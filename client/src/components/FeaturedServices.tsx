@@ -112,7 +112,7 @@ export default function FeaturedServices() {
     const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
     return (
-        <section id="featured-services" className="py-24 bg-white">
+        <section id="services" className="py-24 bg-white">
             <div className="container mx-auto px-6">
                 <motion.div
                     className="text-center mb-16"
