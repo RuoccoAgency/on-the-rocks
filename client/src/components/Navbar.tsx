@@ -53,7 +53,6 @@ export default function Navbar() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("/#") || (href.startsWith("#") && location !== "/")) {
-      // Allow default Link behavior for cross-page anchors
       return;
     }
 
@@ -103,11 +102,11 @@ export default function Navbar() {
               className="h-10 w-auto object-contain"
             />
           </div>
-          <div className="flex flex-col ml-2">
-            <span className={`text-xl font-serif font-bold tracking-widest leading-none ${scrolled || desktopDropdownOpen || mobileMenuOpen ? 'text-black' : 'text-white'}`}>
+          <div className="flex flex-col ml-1">
+            <span className={`text-lg font-serif font-bold tracking-widest leading-none ${scrolled || desktopDropdownOpen || mobileMenuOpen ? 'text-black' : 'text-white'}`}>
               ON THE ROCKS
             </span>
-            <span className="text-primary text-xl font-script leading-none -mt-1 transform -rotate-2 origin-left">
+            <span className="text-primary text-lg font-script leading-none -mt-1 transform -rotate-2 origin-left">
               Event & Wedding
             </span>
           </div>
@@ -121,7 +120,7 @@ export default function Navbar() {
                 <button
                   onMouseEnter={() => setDesktopDropdownOpen(true)}
                   onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-                  className={`text-sm uppercase tracking-widest transition-colors relative group font-medium flex items-center gap-1 ${scrolled || desktopDropdownOpen ? 'text-black/80 hover:text-primary' : 'text-white/90 hover:text-primary'
+                  className={`text-[13px] uppercase tracking-widest transition-colors relative group font-medium flex items-center gap-1 ${scrolled || desktopDropdownOpen ? 'text-black/80 hover:text-primary' : 'text-white/90 hover:text-primary'
                     }`}
                 >
                   {link.name}
@@ -132,7 +131,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href!)}
-                  className={`text-sm uppercase tracking-widest transition-colors relative group font-medium ${scrolled || desktopDropdownOpen ? 'text-black/80 hover:text-primary' : 'text-white/90 hover:text-primary'
+                  className={`text-[13px] uppercase tracking-widest transition-colors relative group font-medium ${scrolled || desktopDropdownOpen ? 'text-black/80 hover:text-primary' : 'text-white/90 hover:text-primary'
                     }`}
                 >
                   {link.name}
@@ -144,7 +143,7 @@ export default function Navbar() {
           <a
             href="/#contact"
             onClick={(e) => scrollToSection(e, "/#contact")}
-            className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300 uppercase text-xs tracking-widest font-bold shadow-lg shadow-primary/30"
+            className="px-5 py-2 bg-primary text-white rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300 uppercase text-[11px] tracking-widest font-bold shadow-lg shadow-primary/30"
           >
             Richiedi un preventivo
           </a>
@@ -159,50 +158,48 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Desktop Dropdown Mega Menu */}
+      {/* Desktop Dropdown Mega Menu (Compact Version) */}
       <AnimatePresence>
         {desktopDropdownOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.3 }}
-            className="hidden md:block absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-2xl"
-            onMouseLeave={() => {
-              // Optional: close when leaving the whole block
-              // setDesktopDropdownOpen(false);
-              // setActiveCategory(null);
-            }}
+            initial={{ opacity: 0, scale: 0.98, y: 5 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.98, y: 5 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="hidden md:block absolute top-[calc(100%-8px)] left-1/2 -translate-x-[70%] w-full max-w-[580px] bg-white border border-gray-100 shadow-2xl rounded-2xl overflow-hidden z-[60]"
           >
-            <div className="container mx-auto flex">
+            <div className="flex h-[360px]">
               {/* Main Categories (Left) */}
-              <div className="w-1/3 border-r border-gray-100 py-8">
+              <div className="w-[40%] border-r border-gray-100 py-3 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-200">
                 {servicesData.map((category) => (
                   <div
                     key={category.slug}
                     onMouseEnter={() => setActiveCategory(category.slug)}
-                    className={`px-8 py-4 cursor-pointer flex justify-between items-center transition-colors ${activeCategory === category.slug ? 'bg-primary/5 text-primary border-r-2 border-primary' : 'hover:bg-gray-50'
+                    className={`px-5 py-2.5 cursor-pointer flex justify-between items-center transition-colors ${activeCategory === category.slug ? 'bg-primary/5 text-primary border-r-2 border-primary' : 'hover:bg-gray-50'
                       }`}
                   >
-                    <Link href={`/servizi/${category.slug}`} className="font-serif font-bold text-lg uppercase tracking-wider block flex-1">
+                    <Link
+                      href={`/servizi/${category.slug}`}
+                      className="font-serif font-bold text-[13px] uppercase tracking-wide block flex-1 leading-tight"
+                    >
                       {category.name}
                     </Link>
-                    {category.subcategories.length > 0 && <ChevronRight size={18} />}
+                    {category.subcategories.length > 0 && <ChevronRight size={14} className="opacity-40" />}
                   </div>
                 ))}
               </div>
 
               {/* Subcategories (Right) */}
-              <div className="w-2/3 p-10 bg-gray-50/50">
+              <div className="w-[60%] bg-gray-50/40 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-200">
                 <AnimatePresence mode="wait">
                   {activeCategory ? (
                     <motion.div
                       key={activeCategory}
-                      initial={{ opacity: 0, x: 10 }}
+                      initial={{ opacity: 0, x: 8 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
+                      exit={{ opacity: 0, x: -8 }}
                       transition={{ duration: 0.2 }}
-                      className="grid grid-cols-2 gap-x-12 gap-y-4"
+                      className="p-5 flex flex-col gap-1.5"
                     >
                       {servicesData.find(c => c.slug === activeCategory)?.subcategories.map((sub, idx) => {
                         if (typeof sub === 'string') {
@@ -210,21 +207,21 @@ export default function Navbar() {
                             <Link
                               key={idx}
                               href={`/servizi/${activeCategory}#${sub.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                              className="text-gray-600 hover:text-primary transition-colors text-sm py-1 border-b border-transparent hover:border-primary/20"
+                              className="text-gray-600 hover:text-primary transition-colors text-[12px] py-1 border-b border-transparent hover:border-primary/10 leading-tight"
                             >
                               {sub}
                             </Link>
                           );
                         } else {
                           return (
-                            <div key={idx} className="col-span-1 mb-4">
-                              <h4 className="font-bold text-black uppercase tracking-widest text-xs mb-3 text-primary">{sub.name}</h4>
-                              <div className="flex flex-col gap-2">
+                            <div key={idx} className="mt-2 mb-1">
+                              <h4 className="font-bold text-primary uppercase tracking-widest text-[10px] mb-2">{sub.name}</h4>
+                              <div className="flex flex-col gap-1.5 pl-1 border-l border-gray-200">
                                 {sub.items.map((item, iIdx) => (
                                   <Link
                                     key={iIdx}
                                     href={`/servizi/${activeCategory}#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                    className="text-gray-600 hover:text-primary transition-colors text-sm"
+                                    className="text-gray-600 hover:text-primary transition-colors text-[11.5px] leading-tight"
                                   >
                                     {item}
                                   </Link>
@@ -236,8 +233,13 @@ export default function Navbar() {
                       })}
                     </motion.div>
                   ) : (
-                    <div className="h-full flex items-center justify-center text-gray-400 font-serif italic">
-                      Seleziona una categoria per visualizzare i dettagli
+                    <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-gray-50/20">
+                      <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mb-3">
+                        <ChevronRight className="text-primary/30" />
+                      </div>
+                      <p className="text-gray-400 font-serif text-[13px] italic leading-relaxed">
+                        Esplora l'eccellenza<br />dei nostri servizi
+                      </p>
                     </div>
                   )}
                 </AnimatePresence>
@@ -247,26 +249,26 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (Compact) */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
+            animate={{ opacity: 1, height: "calc(100vh - 70px)" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white overflow-y-auto shadow-xl fixed inset-x-0 top-[70px] z-[40]"
           >
-            <div className="flex flex-col p-6 gap-2">
+            <div className="flex flex-col p-5 gap-1.5">
               {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-gray-50 pb-2">
+                <div key={link.name} className="border-b border-gray-50">
                   {link.isDropdown ? (
                     <div>
                       <button
                         onClick={() => toggleMobileCategory("servizi")}
-                        className="flex justify-between items-center w-full py-4 text-black font-serif text-xl font-bold uppercase tracking-wider"
+                        className="flex justify-between items-center w-full py-3.5 text-black font-serif text-lg font-bold uppercase tracking-wider"
                       >
                         {link.name}
-                        <ChevronDown className={`transition-transform ${mobileExpanded === "servizi" ? "rotate-180" : ""}`} />
+                        <ChevronDown size={18} className={`transition-transform duration-300 ${mobileExpanded === "servizi" ? "rotate-180" : ""}`} />
                       </button>
                       <AnimatePresence>
                         {mobileExpanded === "servizi" && (
@@ -274,17 +276,17 @@ export default function Navbar() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden pl-4"
+                            className="overflow-hidden pl-3"
                           >
                             {servicesData.map((category) => (
-                              <div key={category.slug} className="mb-2">
+                              <div key={category.slug} className="mb-1">
                                 <button
                                   onClick={() => toggleMobileCategory(category.slug)}
-                                  className="flex justify-between items-center w-full py-3 text-gray-800 font-medium"
+                                  className="flex justify-between items-center w-full py-2.5 text-gray-800 font-bold text-[14px]"
                                 >
                                   {category.name}
                                   {category.subcategories.length > 0 && (
-                                    <ChevronDown size={16} className={`transition-transform ${mobileExpanded === category.slug ? "rotate-180" : ""}`} />
+                                    <ChevronDown size={14} className={`transition-transform ${mobileExpanded === category.slug ? "rotate-180" : ""}`} />
                                   )}
                                 </button>
                                 <AnimatePresence>
@@ -293,10 +295,10 @@ export default function Navbar() {
                                       initial={{ height: 0, opacity: 0 }}
                                       animate={{ height: "auto", opacity: 1 }}
                                       exit={{ height: 0, opacity: 0 }}
-                                      className="overflow-hidden pl-4 flex flex-col gap-2 pb-2"
+                                      className="overflow-hidden pl-3 flex flex-col gap-1.5 pb-2"
                                     >
-                                      <Link href={`/servizi/${category.slug}`} className="text-primary font-bold text-sm uppercase py-1">
-                                        Vai alla pagina {category.name}
+                                      <Link href={`/servizi/${category.slug}`} className="text-primary font-bold text-[12px] uppercase py-1.5 tracking-wider">
+                                        Vai alla sezione completa
                                       </Link>
                                       {category.subcategories.map((sub, sIdx) => {
                                         if (typeof sub === 'string') {
@@ -304,21 +306,21 @@ export default function Navbar() {
                                             <Link
                                               key={sIdx}
                                               href={`/servizi/${category.slug}#${sub.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                              className="text-gray-500 py-1 text-sm"
+                                              className="text-gray-500 py-1 text-[13px] leading-tight"
                                             >
                                               {sub}
                                             </Link>
                                           );
                                         } else {
                                           return (
-                                            <div key={sIdx} className="mt-2">
-                                              <p className="text-xs font-bold uppercase text-gray-400 mb-1">{sub.name}</p>
-                                              <div className="flex flex-col gap-1 pl-2">
+                                            <div key={sIdx} className="mt-1">
+                                              <p className="text-[10px] font-bold uppercase text-gray-400 mb-1.5 tracking-widest">{sub.name}</p>
+                                              <div className="flex flex-col gap-1 pl-2 border-l border-gray-100">
                                                 {sub.items.map((item, iIdx) => (
                                                   <Link
                                                     key={iIdx}
                                                     href={`/servizi/${category.slug}#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                                    className="text-gray-500 py-1 text-sm"
+                                                    className="text-gray-500 py-1 text-[12.5px] leading-tight"
                                                   >
                                                     {item}
                                                   </Link>
@@ -341,7 +343,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href!)}
-                      className="block py-4 text-black/80 hover:text-primary text-xl font-serif font-bold uppercase tracking-wider"
+                      className="block py-3.5 text-black/80 hover:text-primary text-lg font-serif font-bold uppercase tracking-wider"
                     >
                       {link.name}
                     </a>
@@ -351,7 +353,7 @@ export default function Navbar() {
               <a
                 href="/#contact"
                 onClick={(e) => scrollToSection(e, "/#contact")}
-                className="mt-6 px-6 py-4 bg-primary text-white text-center rounded-full font-bold uppercase tracking-widest text-sm shadow-xl"
+                className="mt-5 px-6 py-4 bg-primary text-white text-center rounded-full font-bold uppercase tracking-widest text-[12px] shadow-xl"
               >
                 Richiedi un preventivo
               </a>
