@@ -6,16 +6,16 @@ export default function Footer() {
     <footer className="bg-primary py-16 text-white border-t border-white/10">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-          
+
           {/* Brand */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-4 justify-center md:justify-start mb-4">
               <div className="h-10 w-auto flex items-center justify-center">
-                 <img 
-                   src={logoImg} 
-                   alt="On The Rocks Logo" 
-                   className="h-10 w-auto object-contain brightness-0 invert"
-                 />
+                <img
+                  src={logoImg}
+                  alt="On The Rocks Logo"
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
               </div>
               <h3 className="text-2xl font-serif font-bold tracking-widest text-white">ON THE ROCKS</h3>
             </div>
@@ -42,9 +42,9 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="mt-16 pt-8 border-t border-white/10 text-center text-white/60 text-xs">
-          © {new Date().getFullYear()} On The Rocks Events & Wedding. All rights reserved.
+          © {new Date().getFullYear()} On The Rocks Events & Wedding. Tutti i diritti riservati.
         </div>
       </div>
     </footer>

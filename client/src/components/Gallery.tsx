@@ -8,19 +8,19 @@ import { ZoomIn } from "lucide-react";
 
 // Gallery Items with captions
 const galleryItems = [
-  { img: img1, title: "Wedding Setup", category: "Matrimoni" },
-  { img: img2, title: "DJ Set & Party", category: "Eventi Musicali" },
+  { img: img1, title: "Allestimento Matrimonio", category: "Matrimoni" },
+  { img: img2, title: "DJ Set e Party", category: "Eventi Musicali" },
   { img: img3, title: "Dettagli Eleganti", category: "Allestimenti" },
   { img: img4, title: "Momenti Speciali", category: "Cerimonie" },
-  { img: img5, title: "Live Concert", category: "Concerti" },
-  { img: img1, title: "Luxury Decor", category: "Design" },
+  { img: img5, title: "Concerto Live", category: "Concerti" },
+  { img: img1, title: "Decorazioni di Lusso", category: "Design" },
 ];
 
 export default function Gallery() {
   return (
     <section id="gallery" className="py-24 bg-white text-black">
       <div className="container mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,12 +44,12 @@ export default function Gallery() {
               transition={{ delay: index * 0.1 }}
               className="group relative h-[400px] overflow-hidden rounded-xl cursor-pointer"
             >
-              <img 
-                src={item.img} 
-                alt={item.title} 
+              <img
+                src={item.img}
+                alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                 <span className="text-white/80 text-xs uppercase tracking-widest mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import FeaturedServices from "@/components/FeaturedServices";
 import About from "@/components/About";
 import ServicesCategories from "@/components/ServicesCategories";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="bg-white min-h-screen text-black overflow-x-hidden">
       <Navbar />
       <Hero />
+      <FeaturedServices />
       <About />
       <ServicesCategories />
       <Gallery />
