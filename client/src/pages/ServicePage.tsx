@@ -211,68 +211,66 @@ export default function ServicePage() {
 
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
-                <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-3xl">
-                    <div className="relative h-48 md:h-64 bg-black">
-                        <div className="absolute inset-0 bg-primary opacity-20" />
-                        <div className="absolute inset-0 flex items-center justify-center text-white/30">
-                            <ImageIcon size={64} strokeWidth={1} />
-                        </div>
-                        <div className="absolute bottom-8 left-8 right-8 z-10">
-                            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
-                            <DialogTitle className="text-3xl md:text-5xl font-serif font-bold text-white uppercase leading-none">
-                                {selectedSub?.title}
-                            </DialogTitle>
-                        </div>
-                    </div>
-
-                    <div className="p-8 md:p-12">
-                        <DialogDescription className="sr-only">
-                            Dettagli del servizio {selectedSub?.title} offerto da On The Rocks.
-                        </DialogDescription>
-                        <div className="mb-10 text-gray-500 leading-relaxed text-lg">
-                            <p>
-                                Il nostro servizio di <strong>{selectedSub?.title}</strong> rappresenta l'apice dell'eccellenza e della personalizzazione.
-                                Ogni aspetto viene curato dal nostro team di esperti per garantire che la visione del cliente si trasformi in una realtà indimenticabile.
-                            </p>
-                            {(selectedSub as any)?.description && (
-                                <p className="mt-4 italic text-primary/80 font-medium">
-                                    {(selectedSub as any).description}
-                                </p>
-                            )}
-                            <p className="mt-4 text-base">
-                                Utilizziamo esclusivamente le migliori tecnologie e fornitori selezionati per offrire un risultato di altissimo livello,
-                                tipico dello stile "On The Rocks".
-                            </p>
-                        </div>
-
-                        {/* Image Gallery Placeholders */}
-                        <div className="mb-12">
-                            <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-6 border-b pb-2">Gallery Anteprima</h4>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                {[1, 2, 3, 4, 5, 6].map((i) => (
-                                    <div key={i} className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center border border-gray-100 hover:bg-gray-100 transition-colors group">
-                                        <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={24} />
-                                    </div>
-                                ))}
+                <DialogContent className="sm:max-w-[650px] max-h-[80vh] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-3xl flex flex-col">
+                    <div className="overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-200">
+                        {/* Main Large Image Placeholder */}
+                        <div className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100">
+                            <ImageIcon size={64} strokeWidth={1} className="text-gray-200" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            <div className="absolute bottom-6 left-8 right-8 text-white">
+                                <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
+                                <DialogTitle className="text-2xl md:text-4xl font-serif font-bold uppercase leading-none">
+                                    {selectedSub?.title}
+                                </DialogTitle>
                             </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 items-center">
-                            <Button
-                                asChild
-                                className="w-full sm:w-auto px-10 py-7 bg-primary hover:bg-primary/90 text-white rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-primary/20 transition-all hover:scale-105"
-                            >
-                                <a href="/#contact" onClick={() => setSelectedSub(null)}>
-                                    Richiedi informazioni
-                                </a>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                onClick={() => setSelectedSub(null)}
-                                className="w-full sm:w-auto px-10 py-7 border-gray-200 text-gray-400 hover:text-black rounded-full font-bold uppercase tracking-widest text-xs transition-all"
-                            >
-                                Chiudi
-                            </Button>
+                        <div className="p-8 md:p-10">
+                            <DialogDescription className="sr-only">
+                                Dettagli del servizio {selectedSub?.title} offerto da On The Rocks.
+                            </DialogDescription>
+
+                            <div className="mb-8 text-gray-500 leading-relaxed text-base md:text-lg">
+                                <p>
+                                    Il nostro servizio di <strong>{selectedSub?.title}</strong> rappresenta l'apice dell'eccellenza e della personalizzazione.
+                                    Ogni aspetto viene curato dal nostro team di esperti per garantire che la visione del cliente si trasformi in una realtà indimenticabile.
+                                </p>
+                                {(selectedSub as any)?.description && (
+                                    <p className="mt-4 italic text-primary/80 font-medium">
+                                        {(selectedSub as any).description}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Secondary Smaller Images */}
+                            <div className="mb-10">
+                                <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
+                                <div className="grid grid-cols-3 gap-3">
+                                    {[1, 2, 3].map((i) => (
+                                        <div key={i} className="aspect-square bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group">
+                                            <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={20} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-3">
+                                <Button
+                                    asChild
+                                    className="w-full py-7 bg-primary hover:bg-primary/90 text-white rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-primary/20 transition-all hover:scale-[1.02]"
+                                >
+                                    <a href="/#contact" onClick={() => setSelectedSub(null)}>
+                                        Richiedi una consulenza
+                                    </a>
+                                </Button>
+                                <Button
+                                    variant="ghost"
+                                    onClick={() => setSelectedSub(null)}
+                                    className="w-full text-gray-400 hover:text-black font-bold uppercase tracking-widest text-[10px] transition-all"
+                                >
+                                    Chiudi finestra
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </DialogContent>
