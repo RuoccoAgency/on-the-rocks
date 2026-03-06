@@ -92,11 +92,23 @@ export const servicesData: ServiceCategory[] = [
     {
         name: "MARKETING, COMUNICAZIONE E SVILUPPO GRAFICO",
         slug: "marketing",
-        subcategories: [],
+        subcategories: [
+            "Digital & Social Media Marketing",
+            "Sviluppo Siti Web & E-commerce",
+            "Brand Identity & Logo Design",
+            "Content Creation & Grafica Pubblicitaria",
+            "Campagne Pubblicitarie & ADS",
+        ],
     },
     {
         name: "IDEE INNOVATIVE",
         slug: "idee-innovative",
-        subcategories: [],
+        subcategories: [
+            "Ologrammi & Proiezioni 3D",
+            "Virtual Reality Storytelling",
+            "Interactive Guestbook Digitali",
+            "Intelligenza Artificiale per Eventi",
+            "Droni & Light Show",
+        ],
     },
 ];
