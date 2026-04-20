@@ -80,6 +80,7 @@ export default function ServicePage() {
             </section>
 
             {isCardLayout ? (
+                <>
                 /* Subcategories Grid Section (Cards with Modals) */
                 <section className="py-24 bg-[#fafafa]">
                     <div className="container mx-auto px-6">
@@ -135,7 +136,94 @@ export default function ServicePage() {
                             ))}
                         </div>
                     </div>
-                </section>
+                    </section>
+
+                    {service.slug === 'matrimoni' && (
+                        <section className="py-32 bg-white overflow-hidden border-t border-gray-50">
+                            <div className="container mx-auto px-6">
+                                <div className="flex flex-col items-center text-center mb-20">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8 }}
+                                        viewport={{ once: true }}
+                                        className="max-w-3xl"
+                                    >
+                                        <span className="text-primary font-script text-3xl mb-4 block">Originalità e Stile</span>
+                                        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 uppercase tracking-tight">APEriWedding</h2>
+                                        <div className="h-1 w-20 bg-primary mx-auto mb-8" />
+                                        <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
+                                            È un aperitivo innovativo servito su un’Ape degli anni ’80, pensato per rendere il matrimonio ancora più originale, elegante e memorabile. Un’idea scenografica e di grande impatto, perfetta per accogliere gli ospiti con stile e creare un momento conviviale, raffinato e diverso dal solito.
+                                        </p>
+                                    </motion.div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8">
+                                    {/* Main Hero Image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.8 }}
+                                        viewport={{ once: true }}
+                                        className="md:col-span-12 lg:col-span-8 relative aspect-[16/10] md:aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl"
+                                    >
+                                        <img 
+                                            src="/APEriWedding/IMG-20260411-WA0025.jpg" 
+                                            alt="APEriWedding Allestimento" 
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    </motion.div>
+                                    
+                                    {/* Portrait/Side Detail */}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: 30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        viewport={{ once: true }}
+                                        className="md:col-span-6 lg:col-span-4 aspect-square md:aspect-[4/5] lg:aspect-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-xl"
+                                    >
+                                        <img 
+                                            src="/APEriWedding/IMG-20260411-WA0013.jpg" 
+                                            alt="APEriWedding Dettaglio Bevande" 
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                    </motion.div>
+
+                                    {/* Bottom Left Small */}
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        className="md:col-span-6 lg:col-span-4 aspect-[4/3] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden group shadow-xl"
+                                    >
+                                        <img 
+                                            src="/APEriWedding/IMG-20260411-WA0006.jpg" 
+                                            alt="APEriWedding Vista Laterale" 
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                    </motion.div>
+
+                                    {/* Bottom Right Wide */}
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.4 }}
+                                        viewport={{ once: true }}
+                                        className="md:col-span-12 lg:col-span-8 aspect-[16/9] md:aspect-[21/9] lg:aspect-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-xl"
+                                    >
+                                        <img 
+                                            src="/APEriWedding/IMG-20260411-WA0007.jpg" 
+                                            alt="APEriWedding Vista Frontale" 
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                        />
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </section>
+                    )}
+                </>
             ) : (
                 /* Standard Content Layout (Marketing & Innovative Ideas) */
                 <section className="py-24 bg-white">
