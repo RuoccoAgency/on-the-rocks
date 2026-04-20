@@ -20,7 +20,13 @@ export default function ServicePage() {
     const [, params] = useRoute("/servizi/:slug");
     const service = servicesData.find((s) => s.slug === params?.slug);
     const [selectedSub, setSelectedSub] = useState<SelectedSubcategory | null>(null);
+    const [lightboxImages, setLightboxImages] = useState<string[]>([]);
     const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
+
+    const openLightbox = (images: string[], index: number) => {
+        setLightboxImages(images);
+        setGalleryIndex(index);
+    };
 
     const apeImages = [
         "/APEriWedding/IMG-20260411-WA0025.jpg",
@@ -33,14 +39,14 @@ export default function ServicePage() {
     ];
 
     const nextImage = () => {
-        if (galleryIndex !== null) {
-            setGalleryIndex((galleryIndex + 1) % apeImages.length);
+        if (galleryIndex !== null && lightboxImages.length > 0) {
+            setGalleryIndex((galleryIndex + 1) % lightboxImages.length);
         }
     };
 
     const prevImage = () => {
-        if (galleryIndex !== null) {
-            setGalleryIndex((galleryIndex - 1 + apeImages.length) % apeImages.length);
+        if (galleryIndex !== null && lightboxImages.length > 0) {
+            setGalleryIndex((galleryIndex - 1 + lightboxImages.length) % lightboxImages.length);
         }
     };
 
@@ -198,7 +204,7 @@ export default function ServicePage() {
                                             whileInView={{ opacity: 1, scale: 1 }}
                                             transition={{ duration: 0.5, delay: index * 0.1 }}
                                             viewport={{ once: true }}
-                                            onClick={() => setGalleryIndex(index)}
+                                            onClick={() => openLightbox(apeImages, index)}
                                             className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 ${
                                                 index === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-square"
                                             }`}
@@ -298,13 +304,24 @@ export default function ServicePage() {
                 <DialogContent className="sm:max-w-[650px] max-h-[80vh] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-3xl flex flex-col">
                     <div className="overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-200">
                         {/* Main Large Image Placeholder */}
-                        <div className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100">
+                        <div 
+                            className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
+                            onClick={() => {
+                                const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
+                                if (fullGallery.length > 0) openLightbox(fullGallery, 0);
+                            }}
+                        >
                             {selectedSub?.image ? (
-                                <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover" />
+                                <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105" />
                             ) : (
                                 <ImageIcon size={64} strokeWidth={1} className="text-gray-200" />
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30">
+                                    <ZoomIn className="text-white w-6 h-6" />
+                                </div>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                             <div className="absolute bottom-6 left-8 right-8 text-white">
                                 <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
                                 <DialogTitle className="text-2xl md:text-4xl font-serif font-bold uppercase leading-none">
@@ -333,20 +350,30 @@ export default function ServicePage() {
                             {/* Secondary Smaller Images */}
                             <div className="mb-10">
                                 <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
-                                <div className="grid grid-cols-3 gap-3">
-                                    {selectedSub?.gallery && selectedSub.gallery.length > 0 ? (
-                                        selectedSub.gallery.map((img, i) => (
-                                            <div key={i} className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group">
-                                                <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                                            </div>
-                                        ))
-                                    ) : (
-                                        [1, 2, 3].map((i) => (
-                                            <div key={i} className="aspect-square bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group">
-                                                <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={20} />
-                                            </div>
-                                        ))
-                                    )}
+                                <div className="grid grid-cols-4 gap-3">
+                                    {(() => {
+                                        const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
+                                        return fullGallery.length > 0 ? (
+                                            fullGallery.map((img, i) => (
+                                                <div 
+                                                    key={i} 
+                                                    onClick={() => openLightbox(fullGallery, i)}
+                                                    className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
+                                                >
+                                                    <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <ZoomIn className="text-white w-5 h-5" />
+                                                    </div>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            [1, 2, 3, 4].map((i) => (
+                                                <div key={i} className="aspect-square bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group">
+                                                    <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={20} />
+                                                </div>
+                                            ))
+                                        );
+                                    })()}
                                 </div>
                             </div>
 
@@ -410,8 +437,8 @@ export default function ServicePage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4 }}
-                            src={galleryIndex !== null ? apeImages[galleryIndex] : ""}
-                            alt="APEriWedding Gallery"
+                            src={galleryIndex !== null ? lightboxImages[galleryIndex] : ""}
+                            alt="Gallery detail"
                             className="max-w-full max-h-full object-contain shadow-2xl"
                         />
 
@@ -431,7 +458,7 @@ export default function ServicePage() {
 
                         {/* Image Counter */}
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 text-white text-xs font-bold tracking-[0.2em] rounded-full backdrop-blur-md border border-white/10 italic">
-                            {(galleryIndex || 0) + 1} / {apeImages.length}
+                            {(galleryIndex || 0) + 1} / {lightboxImages.length}
                         </div>
                     </div>
                 </DialogContent>
