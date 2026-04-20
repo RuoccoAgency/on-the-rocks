@@ -18,9 +18,27 @@ export const servicesData: ServiceCategory[] = [
         subcategories: [
             "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
             "Consulenza Wedding Planner",
-            "Inviti e Partecipazioni",
-            "Gadget Personalizzati",
-            "Allestimento Sala",
+            {
+                name: "Inviti e Partecipazioni",
+                items: [],
+                image: "/services/inviti.jpg"
+            },
+            {
+                name: "Gadget Personalizzati",
+                items: [],
+                image: "/services/gadget.jpg"
+            },
+            {
+                name: "Allestimento Cerimonia",
+                items: [],
+                image: "/services/cerimonia-1.jpg",
+                gallery: ["/services/cerimonia-2.jpg"]
+            },
+            {
+                name: "Allestimento Sala",
+                items: [],
+                image: "/services/sala.jpg"
+            },
             "Allestimento Taglio Torta",
             "Confettata",
             "Intrattenimento Musicale",
