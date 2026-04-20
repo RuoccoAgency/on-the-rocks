@@ -52,7 +52,30 @@ export default function ServicePage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [params?.slug]);
+        
+        // Handle hash for deep linking to subcategories
+        if (window.location.hash) {
+            const hash = decodeURIComponent(window.location.hash.substring(1));
+            const sub = service.subcategories.find(s => {
+                const title = typeof s === 'string' ? s : s.name;
+                return title.toLowerCase().replace(/[^a-z0-9]/g, '-') === hash;
+            });
+
+            if (sub) {
+                const item = typeof sub === 'string' 
+                    ? { title: sub, items: [], image: undefined, gallery: undefined }
+                    : { title: sub.name, items: sub.items, image: sub.image, gallery: sub.gallery };
+                
+                setSelectedSub({
+                    title: item.title,
+                    parentService: service.name,
+                    image: item.image,
+                    gallery: item.gallery,
+                    description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
+                });
+            }
+        }
+    }, [params?.slug, service]);
 
     if (!service) {
         return (
@@ -251,12 +274,30 @@ export default function ServicePage() {
                                         ma anticipino le tendenze future del mercato.
                                     </p>
                                     <ul className="space-y-3 pt-4">
-                                        {service.subcategories.map((sub, i) => (
-                                            <li key={i} className="flex items-center gap-3">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                                                <span className="font-bold text-black uppercase text-sm tracking-wider">{typeof sub === 'string' ? sub : sub.name}</span>
-                                            </li>
-                                        ))}
+                                        {service.subcategories.map((sub, i) => {
+                                            const subObj = typeof sub === 'string' 
+                                                ? { title: sub, items: [], image: undefined, gallery: undefined }
+                                                : { title: sub.name, items: sub.items, image: sub.image, gallery: sub.gallery };
+                                            
+                                            return (
+                                                <li 
+                                                    key={i} 
+                                                    className="flex items-center gap-3 cursor-pointer group/item"
+                                                    onClick={() => setSelectedSub({
+                                                        title: subObj.title,
+                                                        parentService: service.name,
+                                                        image: subObj.image,
+                                                        gallery: subObj.gallery,
+                                                        description: subObj.items.length > 0 ? `Include: ${subObj.items.join(', ')}` : undefined
+                                                    })}
+                                                >
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-primary group-hover/item:scale-150 transition-transform" />
+                                                    <span className="font-bold text-black uppercase text-sm tracking-wider group-hover/item:text-primary transition-colors">
+                                                        {subObj.title}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })}
                                     </ul>
                                 </div>
                                 <Button
