@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ImageIcon } from "lucide-react";
+import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface SelectedSubcategory {
     title: string;
@@ -17,6 +17,29 @@ export default function ServicePage() {
     const [, params] = useRoute("/servizi/:slug");
     const service = servicesData.find((s) => s.slug === params?.slug);
     const [selectedSub, setSelectedSub] = useState<SelectedSubcategory | null>(null);
+    const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
+
+    const apeImages = [
+        "/APEriWedding/IMG-20260411-WA0025.jpg",
+        "/APEriWedding/IMG-20260411-WA0013.jpg",
+        "/APEriWedding/IMG-20260411-WA0006.jpg",
+        "/APEriWedding/IMG-20260411-WA0007.jpg",
+        "/APEriWedding/IMG-20260411-WA0008.jpg",
+        "/APEriWedding/IMG-20260411-WA0014.jpg",
+        "/APEriWedding/IMG-20260411-WA0024.jpg",
+    ];
+
+    const nextImage = () => {
+        if (galleryIndex !== null) {
+            setGalleryIndex((galleryIndex + 1) % apeImages.length);
+        }
+    };
+
+    const prevImage = () => {
+        if (galleryIndex !== null) {
+            setGalleryIndex((galleryIndex - 1 + apeImages.length) % apeImages.length);
+        }
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -158,67 +181,31 @@ export default function ServicePage() {
                                     </motion.div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8">
-                                    {/* Main Hero Image */}
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.8 }}
-                                        viewport={{ once: true }}
-                                        className="md:col-span-12 lg:col-span-8 relative aspect-[16/10] md:aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-2xl"
-                                    >
-                                        <img 
-                                            src="/APEriWedding/IMG-20260411-WA0025.jpg" 
-                                            alt="APEriWedding Allestimento" 
-                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    </motion.div>
-                                    
-                                    {/* Portrait/Side Detail */}
-                                    <motion.div
-                                        initial={{ opacity: 0, x: 30 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.2 }}
-                                        viewport={{ once: true }}
-                                        className="md:col-span-6 lg:col-span-4 aspect-square md:aspect-[4/5] lg:aspect-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-xl"
-                                    >
-                                        <img 
-                                            src="/APEriWedding/IMG-20260411-WA0013.jpg" 
-                                            alt="APEriWedding Dettaglio Bevande" 
-                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                        />
-                                    </motion.div>
-
-                                    {/* Bottom Left Small */}
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        className="md:col-span-6 lg:col-span-4 aspect-[4/3] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden group shadow-xl"
-                                    >
-                                        <img 
-                                            src="/APEriWedding/IMG-20260411-WA0006.jpg" 
-                                            alt="APEriWedding Vista Laterale" 
-                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                        />
-                                    </motion.div>
-
-                                    {/* Bottom Right Wide */}
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.4 }}
-                                        viewport={{ once: true }}
-                                        className="md:col-span-12 lg:col-span-8 aspect-[16/9] md:aspect-[21/9] lg:aspect-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden group shadow-xl"
-                                    >
-                                        <img 
-                                            src="/APEriWedding/IMG-20260411-WA0007.jpg" 
-                                            alt="APEriWedding Vista Frontale" 
-                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                        />
-                                    </motion.div>
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                                    {apeImages.map((src, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                                            viewport={{ once: true }}
+                                            onClick={() => setGalleryIndex(index)}
+                                            className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 ${
+                                                index === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-square"
+                                            }`}
+                                        >
+                                            <img 
+                                                src={src} 
+                                                alt={`APEriWedding photo ${index + 1}`} 
+                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                                    <ImageIcon className="text-white w-6 h-6" />
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    ))}
                                 </div>
                             </div>
                         </section>
@@ -385,6 +372,49 @@ export default function ServicePage() {
             </section>
 
             <Footer />
+
+            {/* APEriWedding Gallery Lightbox */}
+            <Dialog open={galleryIndex !== null} onOpenChange={(open) => !open && setGalleryIndex(null)}>
+                <DialogContent className="max-w-[95vw] md:max-w-5xl p-0 bg-black/95 border-none outline-none shadow-none flex flex-col justify-center items-center overflow-hidden">
+                    <button 
+                        onClick={() => setGalleryIndex(null)}
+                        className="absolute top-4 right-4 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors text-white"
+                    >
+                        <X size={24} />
+                    </button>
+
+                    <div className="relative w-full h-[80vh] flex items-center justify-center p-4">
+                        <motion.img
+                            key={galleryIndex}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4 }}
+                            src={galleryIndex !== null ? apeImages[galleryIndex] : ""}
+                            alt="APEriWedding Gallery"
+                            className="max-w-full max-h-full object-contain shadow-2xl"
+                        />
+
+                        {/* Navigation Arrows */}
+                        <button
+                            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all text-white border border-white/20 backdrop-blur-md"
+                        >
+                            <ChevronLeft size={32} />
+                        </button>
+                        <button
+                            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all text-white border border-white/20 backdrop-blur-md"
+                        >
+                            <ChevronRight size={32} />
+                        </button>
+
+                        {/* Image Counter */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/50 text-white text-xs font-bold tracking-[0.2em] rounded-full backdrop-blur-md border border-white/10 italic">
+                            {(galleryIndex || 0) + 1} / {apeImages.length}
+                        </div>
+                    </div>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }
