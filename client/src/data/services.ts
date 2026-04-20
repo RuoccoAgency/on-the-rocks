@@ -57,7 +57,11 @@ export const servicesData: ServiceCategory[] = [
         slug: "organizzazione-eventi",
         subcategories: [
             "Struttura e Progettazione Evento",
-            "Selezione Location",
+            {
+                name: "Selezione Location",
+                items: [],
+                image: "/services/location-1.jpg"
+            },
             "Analisi spese e piano di Budget",
             "Gestione e timing intero evento",
             "Disbrigo pratiche",
@@ -73,7 +77,12 @@ export const servicesData: ServiceCategory[] = [
                 image: "/services/audio-luci.jpg",
                 gallery: ["/services/audio-luci-2.jpg"]
             },
-            "Noleggio e montaggio scenografie e luci architetturali",
+            {
+                name: "Noleggio e montaggio scenografie e luci architetturali",
+                items: [],
+                image: "/services/scenografia-1.jpg",
+                gallery: ["/services/scenografia-2.jpg", "/services/scenografia-3.jpg", "/services/scenografia-4.jpg"]
+            },
             {
                 name: "Noleggio e montaggio palchi",
                 items: [],
