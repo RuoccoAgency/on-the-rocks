@@ -1,6 +1,8 @@
 export interface SubcategoryGroup {
     name: string;
     items: string[];
+    image?: string;
+    gallery?: string[];
 }
 
 export interface ServiceCategory {
@@ -23,7 +25,11 @@ export const servicesData: ServiceCategory[] = [
             "Confettata",
             "Intrattenimento Musicale",
             "Artisti",
-            "Dj Set - Animazione",
+            {
+                name: "Dj Set - Animazione",
+                items: [],
+                image: "/services/dj-set.jpg"
+            },
             "Effetti Speciali",
             "APEriWedding - Open Bar",
         ],
@@ -45,7 +51,11 @@ export const servicesData: ServiceCategory[] = [
         subcategories: [
             "Noleggio e Montaggio impianti audio e luci",
             "Noleggio e montaggio scenografie e luci architetturali",
-            "Noleggio e montaggio palchi",
+            {
+                name: "Noleggio e montaggio palchi",
+                items: [],
+                image: "/services/palchi.jpg"
+            },
         ],
     },
     {
@@ -82,6 +92,8 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "LIVE SHOW",
                 items: ["NaltroSound", "Unusual Live Band"],
+                image: "/services/liveshow-1.jpg",
+                gallery: ["/services/liveshow-2.jpg", "/services/liveshow-3.jpg"]
             },
             {
                 name: "FOLK E POPOLARE",

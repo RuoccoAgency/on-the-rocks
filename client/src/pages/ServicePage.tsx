@@ -11,6 +11,9 @@ import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-reac
 interface SelectedSubcategory {
     title: string;
     parentService: string;
+    image?: string;
+    gallery?: string[];
+    description?: string;
 }
 
 export default function ServicePage() {
@@ -57,15 +60,15 @@ export default function ServicePage() {
     const isCardLayout = ['matrimoni', 'organizzazione-eventi', 'spettacolo', 'agenzia-musicale', 'artisti'].includes(service.slug);
 
     // Prepare items for card layout
-    const cardItems = service.slug === 'artisti'
-        ? service.subcategories.map(sub => {
-            if (typeof sub === 'object') return { title: sub.name, items: sub.items };
-            return { title: sub, items: [] };
-        })
-        : service.subcategories.map(sub => {
-            if (typeof sub === 'string') return { title: sub, items: [] };
-            return { title: sub.name, items: sub.items };
-        });
+    const cardItems = service.subcategories.map(sub => {
+        if (typeof sub === 'string') return { title: sub, items: [], image: undefined, gallery: undefined };
+        return { 
+            title: sub.name, 
+            items: sub.items, 
+            image: sub.image, 
+            gallery: sub.gallery 
+        };
+    });
 
     return (
         <div className="bg-white min-h-screen text-black overflow-x-hidden">
@@ -130,13 +133,19 @@ export default function ServicePage() {
                                     onClick={() => setSelectedSub({
                                         title: item.title,
                                         parentService: service.name,
+                                        image: item.image,
+                                        gallery: item.gallery,
                                         description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
-                                    } as any)}
+                                    })}
                                     className="group cursor-pointer bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
                                 >
                                     <div className="relative h-64 overflow-hidden">
                                         <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
-                                            <ImageIcon size={48} strokeWidth={1} className="text-gray-300" />
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <ImageIcon size={48} strokeWidth={1} className="text-gray-300" />
+                                            )}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
                                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
@@ -290,7 +299,11 @@ export default function ServicePage() {
                     <div className="overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-200">
                         {/* Main Large Image Placeholder */}
                         <div className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100">
-                            <ImageIcon size={64} strokeWidth={1} className="text-gray-200" />
+                            {selectedSub?.image ? (
+                                <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover" />
+                            ) : (
+                                <ImageIcon size={64} strokeWidth={1} className="text-gray-200" />
+                            )}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                             <div className="absolute bottom-6 left-8 right-8 text-white">
                                 <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
@@ -321,11 +334,19 @@ export default function ServicePage() {
                             <div className="mb-10">
                                 <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
                                 <div className="grid grid-cols-3 gap-3">
-                                    {[1, 2, 3].map((i) => (
-                                        <div key={i} className="aspect-square bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group">
-                                            <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={20} />
-                                        </div>
-                                    ))}
+                                    {selectedSub?.gallery && selectedSub.gallery.length > 0 ? (
+                                        selectedSub.gallery.map((img, i) => (
+                                            <div key={i} className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group">
+                                                <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                            </div>
+                                        ))
+                                    ) : (
+                                        [1, 2, 3].map((i) => (
+                                            <div key={i} className="aspect-square bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 group">
+                                                <ImageIcon className="text-gray-200 group-hover:text-primary/20 transition-colors" size={20} />
+                                            </div>
+                                        ))
+                                    )}
                                 </div>
                             </div>
 
