@@ -18,7 +18,8 @@ interface SelectedSubcategory {
 
 export default function ServicePage() {
     const [, params] = useRoute("/servizi/:slug");
-    const service = servicesData.find((s) => s.slug === params?.slug);
+    const serviceSlug = params?.slug?.toLowerCase().replace(/\s+/g, '-');
+    const service = servicesData.find((s) => s.slug === serviceSlug);
     const [selectedSub, setSelectedSub] = useState<SelectedSubcategory | null>(null);
     const [lightboxImages, setLightboxImages] = useState<string[]>([]);
     const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
@@ -54,8 +55,8 @@ export default function ServicePage() {
         window.scrollTo(0, 0);
         
         // Handle hash for deep linking to subcategories
-        if (window.location.hash) {
-            const hash = decodeURIComponent(window.location.hash.substring(1));
+        if (service && window.location.hash) {
+            const hash = decodeURIComponent(window.location.hash.substring(1)).toLowerCase().replace(/\s+/g, '-');
             const sub = service.subcategories.find(s => {
                 const title = typeof s === 'string' ? s : s.name;
                 return title.toLowerCase().replace(/[^a-z0-9]/g, '-') === hash;

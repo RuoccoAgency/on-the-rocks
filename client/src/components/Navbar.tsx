@@ -215,7 +215,12 @@ export default function Navbar() {
                         } else {
                           return (
                             <div key={idx} className="mt-2 mb-1">
-                              <h4 className="font-bold text-primary uppercase tracking-widest text-[10px] mb-2">{sub.name}</h4>
+                              <Link 
+                                href={`/servizi/${activeCategory}#${sub.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                                className="font-bold text-primary hover:text-primary/70 transition-colors uppercase tracking-widest text-[10px] mb-2 block"
+                              >
+                                {sub.name}
+                              </Link>
                               <div className="flex flex-col gap-1.5 pl-1 border-l border-gray-200">
                                 {sub.items.map((item, iIdx) => (
                                   <Link
@@ -314,7 +319,12 @@ export default function Navbar() {
                                         } else {
                                           return (
                                             <div key={sIdx} className="mt-1">
-                                              <p className="text-[10px] font-bold uppercase text-gray-400 mb-1.5 tracking-widest">{sub.name}</p>
+                                              <Link 
+                                                href={`/servizi/${category.slug}#${sub.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                                                className="text-[10px] font-bold uppercase text-gray-400 hover:text-primary mb-1.5 tracking-widest block"
+                                              >
+                                                {sub.name}
+                                              </Link>
                                               <div className="flex flex-col gap-1 pl-2 border-l border-gray-100">
                                                 {sub.items.map((item, iIdx) => (
                                                   <Link
