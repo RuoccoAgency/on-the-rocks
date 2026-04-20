@@ -52,7 +52,8 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Noleggio e Montaggio impianti audio e luci",
                 items: [],
-                image: "/services/audio-luci.jpg"
+                image: "/services/audio-luci.jpg",
+                gallery: ["/services/audio-luci-2.jpg"]
             },
             "Noleggio e montaggio scenografie e luci architetturali",
             {
