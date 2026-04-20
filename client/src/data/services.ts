@@ -49,7 +49,11 @@ export const servicesData: ServiceCategory[] = [
         name: "SERVIZI PER LO SPETTACOLO",
         slug: "spettacolo",
         subcategories: [
-            "Noleggio e Montaggio impianti audio e luci",
+            {
+                name: "Noleggio e Montaggio impianti audio e luci",
+                items: [],
+                image: "/services/audio-luci.jpg"
+            },
             "Noleggio e montaggio scenografie e luci architetturali",
             {
                 name: "Noleggio e montaggio palchi",
