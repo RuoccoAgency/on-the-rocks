@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 
 interface SelectedSubcategory {
     title: string;

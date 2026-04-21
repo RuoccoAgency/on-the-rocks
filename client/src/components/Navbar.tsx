@@ -213,11 +213,16 @@ export default function Navbar() {
                             </Link>
                           );
                         } else {
+                          const isFirstThree = ['matrimoni', 'organizzazione-eventi', 'spettacolo'].includes(activeCategory || '');
                           return (
                             <div key={idx} className="mt-2 mb-1">
                               <Link 
                                 href={`/servizi/${activeCategory}#${sub.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                className="font-bold text-primary hover:text-primary/70 transition-colors uppercase tracking-widest text-[10px] mb-2 block"
+                                className={`transition-colors mb-2 block ${
+                                  isFirstThree 
+                                    ? "text-gray-600 text-[12px] font-medium" 
+                                    : "font-bold text-primary uppercase tracking-widest text-[10px]"
+                                } hover:text-primary`}
                               >
                                 {sub.name}
                               </Link>
@@ -317,11 +322,16 @@ export default function Navbar() {
                                             </Link>
                                           );
                                         } else {
+                                          const isFirstThree = ['matrimoni', 'organizzazione-eventi', 'spettacolo'].includes(category.slug);
                                           return (
                                             <div key={sIdx} className="mt-1">
                                               <Link 
                                                 href={`/servizi/${category.slug}#${sub.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                                className="text-[10px] font-bold uppercase text-gray-400 hover:text-primary mb-1.5 tracking-widest block"
+                                                className={`mb-1.5 tracking-widest block transition-colors ${
+                                                  isFirstThree 
+                                                    ? "text-gray-500 text-[13px] font-medium" 
+                                                    : "text-[10px] font-bold uppercase text-gray-400 hover:text-primary"
+                                                } hover:text-primary`}
                                               >
                                                 {sub.name}
                                               </Link>
