@@ -343,60 +343,75 @@ export default function ServicePage() {
 
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
-                <DialogContent className="sm:max-w-[650px] p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
-                    <div className="max-h-[85vh] overflow-y-auto custom-scrollbar-v2">
-                        {/* Main Hero Image - Shorter height to encourage scrolling */}
+                <DialogContent className="sm:max-w-[700px] w-[95vw] sm:w-full p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
+                    <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
+                        {/* Main Hero Image */}
                         <div 
-                            className="relative h-56 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
                             onClick={() => {
                                 const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
                                 if (fullGallery.length > 0) openLightbox(fullGallery, 0);
                             }}
                         >
                             {selectedSub?.image ? (
-                                <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105" />
+                                <img 
+                                    src={selectedSub.image} 
+                                    alt={selectedSub.title} 
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105"
+                                    onError={(e) => {
+                                        // Fallback if image fails to load
+                                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';
+                                    }}
+                                />
                             ) : (
-                                <div className="flex flex-col items-center gap-3 py-12">
-                                    <ImageIcon size={48} strokeWidth={1} className="text-gray-200" />
-                                    <span className="text-[10px] uppercase tracking-widest text-gray-300">Nessuna anteprima</span>
+                                <div className="flex flex-col items-center gap-4 py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+                                    <div className="p-5 bg-white rounded-full shadow-sm border border-gray-100">
+                                        <ImageIcon size={48} strokeWidth={1} className="text-gray-200" />
+                                    </div>
+                                    <span className="text-[11px] uppercase tracking-[0.3em] font-medium text-gray-400">On The Rocks Experience</span>
                                 </div>
                             )}
-                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20">
+                            
+                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/30 transform scale-90 group-hover/hero:scale-100 transition-transform duration-300">
                                     <ZoomIn className="text-white w-6 h-6" />
                                 </div>
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                            
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
                             
                             <div className="absolute bottom-6 left-8 right-8 text-white">
-                                <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
-                                <DialogTitle className="text-2xl md:text-3xl font-serif font-bold uppercase leading-tight">
+                                <motion.span 
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] mb-2 block"
+                                >
+                                    {selectedSub?.parentService}
+                                </motion.span>
+                                <DialogTitle className="text-2xl md:text-4xl font-serif font-bold uppercase leading-tight tracking-tight">
                                     {selectedSub?.title}
                                 </DialogTitle>
                             </div>
                         </div>
 
-                        {/* Scroll hint icon */}
-                        <div className="flex justify-center -mt-3 relative z-20">
-                            <div className="bg-white p-1 rounded-full shadow-lg border border-gray-100 animate-bounce">
-                                <ChevronDown className="w-4 h-4 text-primary" />
-                            </div>
-                        </div>
-
-                        <div className="p-8 md:p-10">
+                        <div className="p-8 md:p-12">
                             <DialogDescription className="sr-only">
                                 Dettagli del servizio {selectedSub?.title} offerto da On The Rocks.
                             </DialogDescription>
 
-                            <div className="mb-8 text-gray-500 leading-relaxed text-base md:text-lg">
+                            <div className="mb-10 text-gray-600 leading-relaxed text-base md:text-lg">
+                                <p className="mb-4">
+                                    Il nostro servizio di <strong>{selectedSub?.title}</strong> rappresenta l'apice dell'eccellenza e della personalizzazione nel panorama degli eventi. 
+                                    Ogni aspetto viene curato dal nostro team di esperti con meticolosa attenzione ai dettagli, garantendo che ogni elemento sia in perfetta armonia con la visione del cliente.
+                                </p>
                                 <p>
-                                    Il nostro servizio di <strong>{selectedSub?.title}</strong> rappresenta l'apice dell'eccellenza e della personalizzazione.
-                                    Ogni aspetto viene curato dal nostro team di esperti per garantire che la visione del cliente si trasformi in una realtà indimenticabile.
+                                    Dalla fase di concept iniziale fino alla realizzazione finale, ci impegniamo a trasformare idee astratte in realtà indimenticabili, 
+                                    creando atmosfere uniche che lasciano un segno indelebile in ogni ospite.
                                 </p>
                                 {(selectedSub as any)?.description && (
-                                    <p className="mt-4 italic text-primary/80 font-medium">
+                                    <div className="mt-6 p-4 bg-gray-50 rounded-2xl border-l-4 border-primary/40 italic text-gray-700 font-medium text-sm md:text-base">
                                         {(selectedSub as any).description}
-                                    </p>
+                                    </div>
                                 )}
                             </div>
 

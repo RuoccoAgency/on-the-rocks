@@ -97,18 +97,21 @@
     border-color: rgba(217, 10, 108, 0.6);
   }
   .custom-scrollbar-v2::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
   }
   .custom-scrollbar-v2::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+    background: #f8f9fa;
   }
   .custom-scrollbar-v2::-webkit-scrollbar-thumb {
     background: #D90A6C;
     border-radius: 10px;
+    border: 2px solid #f8f9fa;
+  }
+  .custom-scrollbar-v2::-webkit-scrollbar-thumb:hover {
+    background: #b00857;
   }
   .custom-scrollbar-v2 {
     scrollbar-width: thin;
-    scrollbar-color: #D90A6C #f1f1f1;
+    scrollbar-color: #D90A6C #f8f9fa;
   }
 }
