@@ -140,7 +140,7 @@ export default function FeaturedServices() {
                             className="group cursor-pointer relative"
                             onClick={() => setLocation(`/servizi/${service.slug}`)}
                         >
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-magenta-glow">
+                            <div className="relative aspect-video sm:aspect-[4/5] overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-magenta-glow">
                                 {/* Background Image */}
                                 <img
                                     src={service.image}

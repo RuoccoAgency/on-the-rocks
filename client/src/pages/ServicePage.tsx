@@ -152,7 +152,7 @@ export default function ServicePage() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                             {cardItems.map((item, idx) => (
                                 <motion.div
                                     key={idx}
@@ -169,7 +169,7 @@ export default function ServicePage() {
                                     })}
                                     className="group cursor-pointer bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
                                 >
-                                    <div className="relative h-64 overflow-hidden">
+                                    <div className="relative h-48 sm:h-64 overflow-hidden">
                                         <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
                                             {item.image ? (
                                                 <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
@@ -343,8 +343,8 @@ export default function ServicePage() {
 
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
-                <DialogContent className="sm:max-w-[650px] max-h-[80vh] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-3xl flex flex-col">
-                    <div className="overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-200">
+                <DialogContent className="sm:max-w-[700px] w-[95vw] h-[90vh] sm:h-auto sm:max-h-[85vh] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-2xl flex flex-col">
+                    <div className="overflow-y-auto flex-1 custom-scrollbar">
                         {/* Main Large Image Placeholder */}
                         <div 
                             className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
@@ -353,6 +353,14 @@ export default function ServicePage() {
                                 if (fullGallery.length > 0) openLightbox(fullGallery, 0);
                             }}
                         >
+                            <div className="absolute top-6 right-6 z-20">
+                                <button 
+                                    onClick={() => setSelectedSub(null)}
+                                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-md transition-all border border-white/20 shadow-xl"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
                             {selectedSub?.image ? (
                                 <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105" />
                             ) : (
