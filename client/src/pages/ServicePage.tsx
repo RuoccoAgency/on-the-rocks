@@ -343,8 +343,8 @@ export default function ServicePage() {
 
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
-                <DialogContent className="sm:max-w-[700px] w-[95vw] h-[90vh] sm:h-auto sm:max-h-[85vh] p-0 overflow-hidden bg-white border-none rounded-3xl shadow-2xl flex flex-col">
-                    <div className="overflow-y-auto flex-1 custom-scrollbar">
+                <DialogContent className="sm:max-w-[650px] p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
+                    <div className="max-h-[85vh] overflow-y-auto custom-scrollbar-v2">
                         {/* Main Large Image Placeholder */}
                         <div 
                             className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
@@ -353,14 +353,6 @@ export default function ServicePage() {
                                 if (fullGallery.length > 0) openLightbox(fullGallery, 0);
                             }}
                         >
-                            <div className="absolute top-6 right-6 z-20">
-                                <button 
-                                    onClick={() => setSelectedSub(null)}
-                                    className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-md transition-all border border-white/20 shadow-xl"
-                                >
-                                    <X size={20} />
-                                </button>
-                            </div>
                             {selectedSub?.image ? (
                                 <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105" />
                             ) : (

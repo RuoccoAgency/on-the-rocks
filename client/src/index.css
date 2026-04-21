@@ -85,6 +85,9 @@
   .bg-magenta-gradient {
     @apply bg-gradient-to-r from-[#D90A6C] to-[#b00857];
   }
+  .aspect-mobile-portrait {
+    @apply aspect-[16/10] sm:aspect-[4/5];
+  }
   .border-magenta-glow {
     box-shadow: 0 0 10px rgba(217, 10, 108, 0.1);
     border-color: rgba(217, 10, 108, 0.3);
@@ -93,17 +96,19 @@
     box-shadow: 0 0 20px rgba(217, 10, 108, 0.2);
     border-color: rgba(217, 10, 108, 0.6);
   }
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  .custom-scrollbar-v2::-webkit-scrollbar {
+    width: 5px;
   }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #e2e8f0;
+  .custom-scrollbar-v2::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 10px;
   }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #cbd5e1;
+  .custom-scrollbar-v2::-webkit-scrollbar-thumb {
+    background: #D90A6C;
+    border-radius: 10px;
+  }
+  .custom-scrollbar-v2 {
+    scrollbar-width: thin;
+    scrollbar-color: #D90A6C #f1f1f1;
   }
 }
