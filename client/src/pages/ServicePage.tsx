@@ -345,9 +345,9 @@ export default function ServicePage() {
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
                 <DialogContent className="sm:max-w-[650px] p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
                     <div className="max-h-[85vh] overflow-y-auto custom-scrollbar-v2">
-                        {/* Main Large Image Placeholder */}
+                        {/* Main Hero Image - Shorter height to encourage scrolling */}
                         <div 
-                            className="relative h-64 md:h-80 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
+                            className="relative h-56 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
                             onClick={() => {
                                 const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
                                 if (fullGallery.length > 0) openLightbox(fullGallery, 0);
@@ -356,19 +356,30 @@ export default function ServicePage() {
                             {selectedSub?.image ? (
                                 <img src={selectedSub.image} alt={selectedSub.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105" />
                             ) : (
-                                <ImageIcon size={64} strokeWidth={1} className="text-gray-200" />
+                                <div className="flex flex-col items-center gap-3 py-12">
+                                    <ImageIcon size={48} strokeWidth={1} className="text-gray-200" />
+                                    <span className="text-[10px] uppercase tracking-widest text-gray-300">Nessuna anteprima</span>
+                                </div>
                             )}
-                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30">
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20">
                                     <ZoomIn className="text-white w-6 h-6" />
                                 </div>
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                            
                             <div className="absolute bottom-6 left-8 right-8 text-white">
                                 <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-2 block">{selectedSub?.parentService}</span>
-                                <DialogTitle className="text-2xl md:text-4xl font-serif font-bold uppercase leading-none">
+                                <DialogTitle className="text-2xl md:text-3xl font-serif font-bold uppercase leading-tight">
                                     {selectedSub?.title}
                                 </DialogTitle>
+                            </div>
+                        </div>
+
+                        {/* Scroll hint icon */}
+                        <div className="flex justify-center -mt-3 relative z-20">
+                            <div className="bg-white p-1 rounded-full shadow-lg border border-gray-100 animate-bounce">
+                                <ChevronDown className="w-4 h-4 text-primary" />
                             </div>
                         </div>
 
