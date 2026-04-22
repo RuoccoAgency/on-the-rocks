@@ -220,8 +220,8 @@ export default function ServicePage() {
                                     </motion.div>
                                 </div>
 
-                                {/* APEriWedding Featured Image (Static) */}
-                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] group cursor-default">
+                                {/* APEriWedding Featured Image (Strictly Static) */}
+                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] pointer-events-none select-none">
                                     <img 
                                         src={apeImages[0]} 
                                         alt="APEriWedding Featured" 
@@ -322,7 +322,7 @@ export default function ServicePage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8 }}
                                 viewport={{ once: true }}
-                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden group shadow-2xl shadow-black/10"
+                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 pointer-events-none select-none"
                             >
                                 <div className="absolute inset-0 flex items-center justify-center text-gray-300">
                                     <div className="flex flex-col items-center gap-4">
@@ -358,9 +358,9 @@ export default function ServicePage() {
                     </DialogHeader>
                     
                     <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
-                        {/* Main Hero Image - Strictly Static */}
+                        {/* Main Hero Image - Strictly Static & Non-Interactive */}
                         <div 
-                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-default pointer-events-none select-none"
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 pointer-events-none select-none touch-none"
                         >
                             {selectedSub?.image ? (
                                 <img 
