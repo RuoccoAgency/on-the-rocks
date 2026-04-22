@@ -19,12 +19,12 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
                 items: [],
-                image: "/services/wedding-planning.jpg"
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Consulenza Wedding Planner",
                 items: [],
-                image: "/services/wedding-consultant.jpg"
+                image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Inviti e Partecipazioni",
@@ -50,22 +50,22 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Allestimento Taglio Torta",
                 items: [],
-                image: "/services/cake-cutting.jpg"
+                image: "https://images.unsplash.com/photo-1535254973040-607b474cb80d?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Confettata",
                 items: [],
-                image: "/services/confettata.jpg"
+                image: "https://images.unsplash.com/photo-1530103862676-de8c9debad17?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Intrattenimento Musicale",
                 items: [],
-                image: "/services/music.jpg"
+                image: "https://images.unsplash.com/photo-1514525253361-bee8718a300a?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Artisti",
                 items: [],
-                image: "/services/artists.jpg"
+                image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Dj Set - Animazione",
@@ -75,12 +75,12 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Effetti Speciali",
                 items: [],
-                image: "/services/special-effects.jpg"
+                image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "APEriWedding - Open Bar",
                 items: [],
-                image: "/services/aperiwedding.jpg"
+                image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
@@ -91,7 +91,7 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Struttura e Progettazione Evento",
                 items: [],
-                image: "/services/event-design.jpg"
+                image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Selezione Location",
@@ -101,17 +101,17 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Analisi spese e piano di Budget",
                 items: [],
-                image: "/services/budget.jpg"
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Gestione e timing intero evento",
                 items: [],
-                image: "/services/timing.jpg"
+                image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Disbrigo pratiche",
                 items: [],
-                image: "/services/burocrazia.jpg"
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
@@ -145,17 +145,17 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Intrattenimento Wedding, Eventi Privati ed Eventi aziendali",
                 items: [],
-                image: "/services/wedding-entertainment.jpg"
+                image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Intrattenimento per Feste di Piazza",
                 items: [],
-                image: "/services/piazza-entertainment.jpg"
+                image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Intrattenimento ed animazione per bambini",
                 items: [],
-                image: "/services/kids-entertainment.jpg"
+                image: "https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
@@ -166,7 +166,7 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "TOP",
                 items: ["Tartaglia Aneuro", "Valerio Jovine"],
-                image: "/services/top-artists.jpg"
+                image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "COVER BAND",
@@ -177,12 +177,12 @@ export const servicesData: ServiceCategory[] = [
                     "Il Nostro Canto Libero - Battisti Cover Band",
                     "Canzone - Cover Band Lucio Dalla",
                 ],
-                image: "/services/cover-band.jpg"
+                image: "https://images.unsplash.com/photo-1528642463351-8ef004430bb4?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "ORCHESTRE SPETTACOLO",
                 items: ["MusicaMania"],
-                image: "/services/orchestra.jpg"
+                image: "https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "LIVE SHOW",
@@ -193,7 +193,7 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "FOLK E POPOLARE",
                 items: ["Musicastoria", "I Valcalore", "Kiepò"],
-                image: "/services/folk.jpg"
+                image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
@@ -204,27 +204,27 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Digital & Social Media Marketing",
                 items: [],
-                image: "/services/social-marketing.jpg"
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Sviluppo Siti Web & E-commerce",
                 items: [],
-                image: "/services/web-development.jpg"
+                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Brand Identity & Logo Design",
                 items: [],
-                image: "/services/brand-identity.jpg"
+                image: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Content Creation & Grafica Pubblicitaria",
                 items: [],
-                image: "/services/content-creation.jpg"
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Campagne Pubblicitarie & ADS",
                 items: [],
-                image: "/services/ads.jpg"
+                image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c207?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
@@ -235,27 +235,27 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Ologrammi & Proiezioni 3D",
                 items: [],
-                image: "/services/hologram.jpg"
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Virtual Reality Storytelling",
                 items: [],
-                image: "/services/vr.jpg"
+                image: "https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Interactive Guestbook Digitali",
                 items: [],
-                image: "/services/guestbook.jpg"
+                image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Intelligenza Artificiale per Eventi",
                 items: [],
-                image: "/services/ai-events.jpg"
+                image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
             },
             {
                 name: "Droni & Light Show",
                 items: [],
-                image: "/services/drones.jpg"
+                image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80"
             },
         ],
     },
