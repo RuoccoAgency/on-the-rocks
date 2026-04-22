@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ArrowRight, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface SelectedSubcategory {
     title: string;
@@ -250,11 +250,7 @@ export default function ServicePage() {
                                                 alt={`APEriWedding photo ${index + 1}`} 
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                             />
-                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform scale-90 group-hover:scale-100 transition-transform duration-500">
-                                                    <ZoomIn className="text-white w-6 h-6" />
-                                                </div>
-                                            </div>
+                                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
                                         </motion.div>
                                     ))}
                                 </div>
@@ -438,11 +434,7 @@ export default function ServicePage() {
                                                     className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
                                                 >
                                                     <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                        <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform scale-90 group-hover:scale-100 transition-transform duration-500">
-                                                            <ZoomIn className="text-white w-5 h-5" />
-                                                        </div>
-                                                    </div>
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
                                                 </div>
                                             ))
                                         ) : (

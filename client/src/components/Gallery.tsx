@@ -4,7 +4,7 @@ import img2 from "@assets/stock_images/concert_dj_party_eve_a38b2e78.jpg";
 import img3 from "@assets/stock_images/elegant_table_settin_cbb789d5.jpg";
 import img4 from "@assets/stock_images/wedding_couple_artis_6d6ae9f6.jpg";
 import img5 from "@assets/stock_images/live_music_band_conc_c0d35b46.jpg";
-import { ZoomIn } from "lucide-react";
+
 
 // Gallery Items with captions
 const galleryItems = [
@@ -58,9 +58,6 @@ export default function Gallery() {
                 <h3 className="text-2xl font-serif font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                   {item.title}
                 </h3>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                  <ZoomIn className="w-12 h-12 text-white" />
-                </div>
               </div>
             </motion.div>
           ))}
