@@ -86,8 +86,8 @@ export default function ServicePage() {
         );
     }
 
-    // Determine layout type
-    const isCardLayout = ['matrimoni', 'organizzazione-eventi', 'spettacolo', 'agenzia-musicale', 'artisti'].includes(service.slug);
+    // Determine layout type (Always use card layout now)
+    const isCardLayout = true;
 
     // Prepare items for card layout
     const cardItems = service.subcategories.map(sub => {

@@ -16,8 +16,16 @@ export const servicesData: ServiceCategory[] = [
         name: "SERVIZI PER I MATRIMONI",
         slug: "matrimoni",
         subcategories: [
-            "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
-            "Consulenza Wedding Planner",
+            {
+                name: "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
+                items: [],
+                image: "/services/wedding-planning.jpg"
+            },
+            {
+                name: "Consulenza Wedding Planner",
+                items: [],
+                image: "/services/wedding-consultant.jpg"
+            },
             {
                 name: "Inviti e Partecipazioni",
                 items: [],
@@ -39,32 +47,72 @@ export const servicesData: ServiceCategory[] = [
                 items: [],
                 image: "/services/sala.jpg"
             },
-            "Allestimento Taglio Torta",
-            "Confettata",
-            "Intrattenimento Musicale",
-            "Artisti",
+            {
+                name: "Allestimento Taglio Torta",
+                items: [],
+                image: "/services/cake-cutting.jpg"
+            },
+            {
+                name: "Confettata",
+                items: [],
+                image: "/services/confettata.jpg"
+            },
+            {
+                name: "Intrattenimento Musicale",
+                items: [],
+                image: "/services/music.jpg"
+            },
+            {
+                name: "Artisti",
+                items: [],
+                image: "/services/artists.jpg"
+            },
             {
                 name: "Dj Set - Animazione",
                 items: [],
                 image: "/services/dj-set.jpg"
             },
-            "Effetti Speciali",
-            "APEriWedding - Open Bar",
+            {
+                name: "Effetti Speciali",
+                items: [],
+                image: "/services/special-effects.jpg"
+            },
+            {
+                name: "APEriWedding - Open Bar",
+                items: [],
+                image: "/services/aperiwedding.jpg"
+            },
         ],
     },
     {
         name: "ORGANIZZAZIONE E PIANIFICAZIONE EVENTI",
         slug: "organizzazione-eventi",
         subcategories: [
-            "Struttura e Progettazione Evento",
+            {
+                name: "Struttura e Progettazione Evento",
+                items: [],
+                image: "/services/event-design.jpg"
+            },
             {
                 name: "Selezione Location",
                 items: [],
                 image: "/services/location-1.jpg"
             },
-            "Analisi spese e piano di Budget",
-            "Gestione e timing intero evento",
-            "Disbrigo pratiche",
+            {
+                name: "Analisi spese e piano di Budget",
+                items: [],
+                image: "/services/budget.jpg"
+            },
+            {
+                name: "Gestione e timing intero evento",
+                items: [],
+                image: "/services/timing.jpg"
+            },
+            {
+                name: "Disbrigo pratiche",
+                items: [],
+                image: "/services/burocrazia.jpg"
+            },
         ],
     },
     {
@@ -94,9 +142,21 @@ export const servicesData: ServiceCategory[] = [
         name: "AGENZIA MUSICALE",
         slug: "agenzia-musicale",
         subcategories: [
-            "Intrattenimento Wedding, Eventi Privati ed Eventi aziendali",
-            "Intrattenimento per Feste di Piazza",
-            "Intrattenimento ed animazione per bambini",
+            {
+                name: "Intrattenimento Wedding, Eventi Privati ed Eventi aziendali",
+                items: [],
+                image: "/services/wedding-entertainment.jpg"
+            },
+            {
+                name: "Intrattenimento per Feste di Piazza",
+                items: [],
+                image: "/services/piazza-entertainment.jpg"
+            },
+            {
+                name: "Intrattenimento ed animazione per bambini",
+                items: [],
+                image: "/services/kids-entertainment.jpg"
+            },
         ],
     },
     {
@@ -106,6 +166,7 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "TOP",
                 items: ["Tartaglia Aneuro", "Valerio Jovine"],
+                image: "/services/top-artists.jpg"
             },
             {
                 name: "COVER BAND",
@@ -116,10 +177,12 @@ export const servicesData: ServiceCategory[] = [
                     "Il Nostro Canto Libero - Battisti Cover Band",
                     "Canzone - Cover Band Lucio Dalla",
                 ],
+                image: "/services/cover-band.jpg"
             },
             {
                 name: "ORCHESTRE SPETTACOLO",
                 items: ["MusicaMania"],
+                image: "/services/orchestra.jpg"
             },
             {
                 name: "LIVE SHOW",
@@ -130,6 +193,7 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "FOLK E POPOLARE",
                 items: ["Musicastoria", "I Valcalore", "Kiepò"],
+                image: "/services/folk.jpg"
             },
         ],
     },
@@ -137,22 +201,62 @@ export const servicesData: ServiceCategory[] = [
         name: "MARKETING, COMUNICAZIONE E SVILUPPO GRAFICO",
         slug: "marketing",
         subcategories: [
-            "Digital & Social Media Marketing",
-            "Sviluppo Siti Web & E-commerce",
-            "Brand Identity & Logo Design",
-            "Content Creation & Grafica Pubblicitaria",
-            "Campagne Pubblicitarie & ADS",
+            {
+                name: "Digital & Social Media Marketing",
+                items: [],
+                image: "/services/social-marketing.jpg"
+            },
+            {
+                name: "Sviluppo Siti Web & E-commerce",
+                items: [],
+                image: "/services/web-development.jpg"
+            },
+            {
+                name: "Brand Identity & Logo Design",
+                items: [],
+                image: "/services/brand-identity.jpg"
+            },
+            {
+                name: "Content Creation & Grafica Pubblicitaria",
+                items: [],
+                image: "/services/content-creation.jpg"
+            },
+            {
+                name: "Campagne Pubblicitarie & ADS",
+                items: [],
+                image: "/services/ads.jpg"
+            },
         ],
     },
     {
         name: "IDEE INNOVATIVE",
         slug: "idee-innovative",
         subcategories: [
-            "Ologrammi & Proiezioni 3D",
-            "Virtual Reality Storytelling",
-            "Interactive Guestbook Digitali",
-            "Intelligenza Artificiale per Eventi",
-            "Droni & Light Show",
+            {
+                name: "Ologrammi & Proiezioni 3D",
+                items: [],
+                image: "/services/hologram.jpg"
+            },
+            {
+                name: "Virtual Reality Storytelling",
+                items: [],
+                image: "/services/vr.jpg"
+            },
+            {
+                name: "Interactive Guestbook Digitali",
+                items: [],
+                image: "/services/guestbook.jpg"
+            },
+            {
+                name: "Intelligenza Artificiale per Eventi",
+                items: [],
+                image: "/services/ai-events.jpg"
+            },
+            {
+                name: "Droni & Light Show",
+                items: [],
+                image: "/services/drones.jpg"
+            },
         ],
     },
 ];
