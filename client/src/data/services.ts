@@ -19,22 +19,32 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Consulenza, Progettazione, Pianificazione e Timing del tuo Evento",
                 items: [],
-                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
+                ]
             },
             {
                 name: "Consulenza Wedding Planner",
                 items: [],
-                image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+                ]
             },
             {
                 name: "Inviti e Partecipazioni",
                 items: [],
-                image: "/services/inviti.jpg"
+                image: "/services/inviti.jpg",
+                gallery: ["https://images.unsplash.com/photo-1510076857177-74700760be49?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Gadget Personalizzati",
                 items: [],
-                image: "/services/gadget.jpg"
+                image: "/services/gadget.jpg",
+                gallery: ["https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Allestimento Cerimonia",
@@ -45,42 +55,50 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Allestimento Sala",
                 items: [],
-                image: "/services/sala.jpg"
+                image: "/services/sala.jpg",
+                gallery: ["https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Allestimento Taglio Torta",
                 items: [],
-                image: "https://images.unsplash.com/photo-1535254973040-607b474cb80d?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1535254973040-607b474cb80d?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Confettata",
                 items: [],
-                image: "https://images.unsplash.com/photo-1530103862676-de8c9debad17?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1530103862676-de8c9debad17?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Intrattenimento Musicale",
                 items: [],
-                image: "https://images.unsplash.com/photo-1514525253361-bee8718a300a?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1514525253361-bee8718a300a?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Artisti",
                 items: [],
-                image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Dj Set - Animazione",
                 items: [],
-                image: "/services/dj-set.jpg"
+                image: "/services/dj-set.jpg",
+                gallery: ["https://images.unsplash.com/photo-1571266028243-3716f02d7999?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Effetti Speciali",
                 items: [],
-                image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "APEriWedding - Open Bar",
                 items: [],
-                image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1536935338213-d2c1233af5f8?auto=format&fit=crop&w=800&q=80"]
             },
         ],
     },
@@ -91,27 +109,32 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Struttura e Progettazione Evento",
                 items: [],
-                image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1517457373958-b7bdd458ad20?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Selezione Location",
                 items: [],
-                image: "/services/location-1.jpg"
+                image: "/services/location-1.jpg",
+                gallery: ["/services/location-2.jpg"]
             },
             {
                 name: "Analisi spese e piano di Budget",
                 items: [],
-                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1454165833767-027ff86816bd?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Gestione e timing intero evento",
                 items: [],
-                image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Disbrigo pratiche",
                 items: [],
-                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
+                gallery: ["https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"]
             },
         ],
     },
@@ -134,7 +157,8 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Noleggio e montaggio palchi",
                 items: [],
-                image: "/services/palchi.jpg"
+                image: "/services/palchi.jpg",
+                gallery: ["https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80"]
             },
         ],
     },

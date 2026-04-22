@@ -220,27 +220,39 @@ export default function ServicePage() {
                                     </motion.div>
                                 </div>
 
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                                    {apeImages.map((src, index) => (
+                                {/* APEriWedding Featured Image (Static) */}
+                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] group cursor-default">
+                                    <img 
+                                        src={apeImages[0]} 
+                                        alt="APEriWedding Featured" 
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                    <div className="absolute bottom-10 left-10 text-white">
+                                        <span className="text-primary font-bold text-xs uppercase tracking-[0.4em] mb-2 block">Premium Experience</span>
+                                        <h3 className="text-3xl md:text-5xl font-serif font-bold uppercase">L'Arte dell'Aperitivo</h3>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                                    {apeImages.slice(1).map((src, index) => (
                                         <motion.div
                                             key={index}
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             whileInView={{ opacity: 1, scale: 1 }}
                                             transition={{ duration: 0.5, delay: index * 0.1 }}
                                             viewport={{ once: true }}
-                                            onClick={() => openLightbox(apeImages, index)}
-                                            className={`relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 ${
-                                                index === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-square"
-                                            }`}
+                                            onClick={() => openLightbox(apeImages.slice(1), index)}
+                                            className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 aspect-square"
                                         >
                                             <img 
                                                 src={src} 
                                                 alt={`APEriWedding photo ${index + 1}`} 
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                             />
-                                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                                    <ImageIcon className="text-white w-6 h-6" />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform scale-90 group-hover:scale-100 transition-transform duration-500">
+                                                    <ZoomIn className="text-white w-6 h-6" />
                                                 </div>
                                             </div>
                                         </motion.div>
@@ -344,10 +356,15 @@ export default function ServicePage() {
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
                 <DialogContent className="sm:max-w-[700px] w-[95vw] sm:w-full p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
+                    <DialogHeader className="sr-only">
+                        <DialogTitle>{selectedSub?.title}</DialogTitle>
+                        <DialogDescription>Dettagli del servizio {selectedSub?.title}</DialogDescription>
+                    </DialogHeader>
+                    
                     <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
-                        {/* Main Hero Image */}
+                        {/* Main Hero Image - Strictly Static */}
                         <div 
-                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-default"
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-default pointer-events-none select-none"
                         >
                             {selectedSub?.image ? (
                                 <img 
@@ -370,9 +387,9 @@ export default function ServicePage() {
                             
 
                             
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
                             
-                            <div className="absolute bottom-6 left-8 right-8 text-white">
+                            <div className="absolute bottom-6 left-8 right-8 text-white pointer-events-none">
                                 <motion.span 
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -380,9 +397,9 @@ export default function ServicePage() {
                                 >
                                     {selectedSub?.parentService}
                                 </motion.span>
-                                <DialogTitle className="text-2xl md:text-4xl font-serif font-bold uppercase leading-tight tracking-tight">
+                                <h2 className="text-2xl md:text-4xl font-serif font-bold uppercase leading-tight tracking-tight">
                                     {selectedSub?.title}
-                                </DialogTitle>
+                                </h2>
                             </div>
                         </div>
 
@@ -421,8 +438,10 @@ export default function ServicePage() {
                                                     className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
                                                 >
                                                     <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                        <ZoomIn className="text-white w-5 h-5" />
+                                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30 transform scale-90 group-hover:scale-100 transition-transform duration-500">
+                                                            <ZoomIn className="text-white w-5 h-5" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             ))
