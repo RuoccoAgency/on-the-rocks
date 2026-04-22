@@ -363,32 +363,23 @@ export default function ServicePage() {
                         <DialogDescription>Dettagli del servizio {selectedSub?.title}</DialogDescription>
                     </DialogHeader>
                     
-                    <div className="flex-1 overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none touch-pan-y overscroll-contain">
-                        {/* Main Hero Image - Static Cover (Allows scrolling) */}
+                    <div className="flex-1 overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none touch-pan-y overscroll-contain relative">
+                        {/* Main Hero Header - Static & Non-Interactive (Allows scrolling) */}
                         <div 
-                            className="relative h-56 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 select-none"
+                            className="relative h-56 sm:h-80 bg-gray-900 overflow-hidden border-b border-gray-100 select-none pointer-events-none"
                         >
                             {selectedSub?.image ? (
-                                <img 
-                                    src={selectedSub.image} 
-                                    alt={selectedSub.title} 
-                                    className="w-full h-full object-cover pointer-events-none"
-                                    onError={(e) => {
-                                        // Fallback if image fails to load
-                                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';
-                                    }}
+                                <div 
+                                    className="absolute inset-0 bg-cover bg-center"
+                                    style={{ backgroundImage: `url(${selectedSub.image})` }}
                                 />
                             ) : (
-                                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 pointer-events-none flex items-center justify-center">
-                                    <div className="opacity-10 scale-150 transform rotate-12">
-                                        <ImageIcon size={200} strokeWidth={0.5} className="text-white" />
-                                    </div>
-                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
                             )}
                             
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                             
-                            <div className="absolute bottom-6 left-8 right-8 text-white pointer-events-none">
+                            <div className="absolute bottom-6 left-8 right-8 text-white">
                                 <motion.span 
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
