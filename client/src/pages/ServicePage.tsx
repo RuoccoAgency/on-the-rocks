@@ -152,58 +152,49 @@ export default function ServicePage() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                             {cardItems.map((item, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: (idx % 2) * 0.1, duration: 0.5 }}
+                                    transition={{ delay: (idx % 3) * 0.1, duration: 0.5 }}
                                     viewport={{ once: true }}
-                                    onClick={() => setSelectedSub({
-                                        title: item.title,
-                                        parentService: service.name,
-                                        image: item.image,
-                                        gallery: item.gallery,
-                                        description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
-                                    })}
-                                    className="group cursor-pointer bg-white p-8 md:p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                                    className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
                                 >
-                                    {/* Subtle decorative element */}
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500" />
-                                    
-                                    <div className="relative z-10 flex flex-col h-full">
-                                        <div className="flex items-center gap-4 mb-6">
-                                            <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                                <span className="text-sm font-bold">{idx + 1}</span>
-                                            </div>
-                                            <h3 className="text-2xl md:text-3xl font-serif font-bold group-hover:text-primary transition-colors leading-tight">
-                                                {item.title}
-                                            </h3>
-                                        </div>
-                                        
-                                        <div className="flex-1">
-                                            <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 line-clamp-3">
-                                                {item.items.length > 0 
-                                                    ? item.items.join(', ')
-                                                    : `Servizio professionale di ${item.title.toLowerCase()} curato in ogni dettaglio per garantirti un'esperienza indimenticabile.`
-                                                }
-                                            </p>
-                                        </div>
-
-                                        <div className="flex items-center justify-between pt-6 border-t border-gray-50">
-                                            <div className="flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 group-hover:text-black transition-colors">
-                                                Dettagli & Gallery <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-2 transition-transform" />
-                                            </div>
-                                            {item.gallery && item.gallery.length > 0 && (
-                                                <div className="flex -space-x-2">
-                                                    {item.gallery.slice(0, 3).map((_, i) => (
-                                                        <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
-                                                            <ImageIcon size={10} className="w-full h-full p-1.5 text-gray-400" />
-                                                        </div>
-                                                    ))}
+                                    <div className="relative h-48 sm:h-64 overflow-hidden">
+                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                            ) : (
+                                                <div className="flex flex-col items-center gap-2">
+                                                    <ImageIcon size={40} strokeWidth={1} className="text-gray-300" />
+                                                    <span className="text-[8px] uppercase tracking-[0.2em] text-gray-400">On The Rocks</span>
                                                 </div>
                                             )}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        </div>
+                                    </div>
+
+                                    <div className="p-8 flex flex-col flex-1">
+                                        <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
+                                            {item.title}
+                                        </h3>
+                                        <div className="w-10 h-0.5 bg-gray-200 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-700" />
+                                        
+                                        <div className="mt-auto">
+                                            <Button
+                                                onClick={() => setSelectedSub({
+                                                    title: item.title,
+                                                    parentService: service.name,
+                                                    image: item.image,
+                                                    gallery: item.gallery,
+                                                    description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
+                                                })}
+                                                className="w-full bg-gray-50 hover:bg-primary text-gray-400 hover:text-white rounded-xl py-6 font-bold uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
+                                            >
+                                                Scopri di più <ArrowRight size={14} />
+                                            </Button>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -330,33 +321,31 @@ export default function ServicePage() {
                             </motion.div>
 
                             <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8 }}
                                 viewport={{ once: true }}
-                                className="bg-gray-50 p-12 md:p-16 rounded-[3rem] border border-gray-100 flex flex-col justify-center relative overflow-hidden"
+                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 select-none cursor-default"
                             >
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32" />
-                                <div className="relative z-10">
-                                    <h3 className="text-3xl md:text-4xl font-serif font-bold mb-8 leading-tight">Trasformiamo le tue <span className="text-primary italic">visioni</span> in realtà tangibili.</h3>
-                                    <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                                        Il nostro approccio combina creatività visionaria e precisione tecnica per superare ogni aspettativa.
-                                    </p>
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-2 h-2 rounded-full bg-primary" />
-                                            <span className="font-bold uppercase tracking-widest text-[10px]">Precisione Tecnica</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-2 h-2 rounded-full bg-primary" />
-                                            <span className="font-bold uppercase tracking-widest text-[10px]">Creatività Illimitata</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-2 h-2 rounded-full bg-primary" />
-                                            <span className="font-bold uppercase tracking-widest text-[10px]">Eccellenza Garantita</span>
-                                        </div>
+                                <div className="absolute inset-0 flex items-center justify-center text-gray-300 pointer-events-none">
+                                    <div className="flex flex-col items-center gap-4">
+                                        <ImageIcon size={64} strokeWidth={1} />
+                                        <span className="text-[10px] uppercase tracking-[0.4em]">Section Image Placeholder</span>
                                     </div>
                                 </div>
+                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
+
+                                {service.slug === 'idee-innovative' && (
+                                    /* Additional Gallery Mockup for Innovative Ideas */
+                                    <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
+                                        <div className="h-32 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center">
+                                            <ImageIcon size={20} className="text-white/20" />
+                                        </div>
+                                        <div className="h-32 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center">
+                                            <ImageIcon size={20} className="text-white/20" />
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         </div>
                     </div>
@@ -371,24 +360,42 @@ export default function ServicePage() {
                         <DialogDescription>Dettagli del servizio {selectedSub?.title}</DialogDescription>
                     </DialogHeader>
                     
-                    <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
-                        {/* Clean Text Header instead of Hero Image */}
-                        <div className="pt-20 pb-10 px-8 md:px-12 bg-black text-white relative overflow-hidden">
-                            {/* Decorative background accent */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -mr-32 -mt-32" />
+                    <div className="max-h-[92vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none">
+                        {/* Main Hero Image - Static Cover (Allows scrolling) */}
+                        <div 
+                            className="relative h-56 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 select-none"
+                        >
+                            {selectedSub?.image ? (
+                                <img 
+                                    src={selectedSub.image} 
+                                    alt={selectedSub.title} 
+                                    className="w-full h-full object-cover pointer-events-none"
+                                    onError={(e) => {
+                                        // Fallback if image fails to load
+                                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';
+                                    }}
+                                />
+                            ) : (
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 pointer-events-none flex items-center justify-center">
+                                    <div className="opacity-10 scale-150 transform rotate-12">
+                                        <ImageIcon size={200} strokeWidth={0.5} className="text-white" />
+                                    </div>
+                                </div>
+                            )}
                             
-                            <div className="relative z-10">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                            
+                            <div className="absolute bottom-6 left-8 right-8 text-white pointer-events-none">
                                 <motion.span 
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="text-primary font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block"
+                                    className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] mb-2 block"
                                 >
                                     {selectedSub?.parentService}
                                 </motion.span>
-                                <h2 className="text-3xl md:text-5xl font-serif font-bold uppercase leading-tight tracking-tight max-w-2xl">
+                                <h2 className="text-2xl md:text-4xl font-serif font-bold uppercase leading-tight tracking-tight">
                                     {selectedSub?.title}
                                 </h2>
-                                <div className="h-1 w-20 bg-primary mt-8" />
                             </div>
                         </div>
 
