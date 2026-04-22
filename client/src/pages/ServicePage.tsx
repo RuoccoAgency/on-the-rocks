@@ -184,13 +184,16 @@ export default function ServicePage() {
                                         
                                         <div className="mt-auto">
                                             <Button
-                                                onClick={() => setSelectedSub({
-                                                    title: item.title,
-                                                    parentService: service.name,
-                                                    image: item.image,
-                                                    gallery: item.gallery,
-                                                    description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
-                                                })}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setSelectedSub({
+                                                        title: item.title,
+                                                        parentService: service.name,
+                                                        image: item.image,
+                                                        gallery: item.gallery,
+                                                        description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
+                                                    });
+                                                }}
                                                 className="w-full bg-gray-50 hover:bg-primary text-gray-400 hover:text-white rounded-xl py-6 font-bold uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
                                             >
                                                 Scopri di più <ArrowRight size={14} />
@@ -360,7 +363,7 @@ export default function ServicePage() {
                         <DialogDescription>Dettagli del servizio {selectedSub?.title}</DialogDescription>
                     </DialogHeader>
                     
-                    <div className="flex-1 overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none">
+                    <div className="flex-1 overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none touch-pan-y overscroll-contain">
                         {/* Main Hero Image - Static Cover (Allows scrolling) */}
                         <div 
                             className="relative h-56 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 select-none"
@@ -418,28 +421,29 @@ export default function ServicePage() {
                                         {(selectedSub as any).description}
                                     </div>
                                 )}
-                                                             {(() => {
-                                        const fullGallery = (selectedSub?.gallery || []).filter(Boolean) as string[];
-                                        if (fullGallery.length === 0) return null;
-                                        
-                                        return (
-                                            <div className="mb-10">
-                                                <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
-                                                <div className="grid grid-cols-4 gap-3">
-                                                    {fullGallery.map((img, i) => (
-                                                        <div 
-                                                            key={i} 
-                                                            onClick={() => openLightbox(fullGallery, i)}
-                                                            className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
-                                                        >
-                                                            <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                                                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
-                                                        </div>
-                                                    ))}
-                                                </div>
+                                {(() => {
+                                    const fullGallery = (selectedSub?.gallery || []).filter(Boolean) as string[];
+                                    if (fullGallery.length === 0) return null;
+
+                                    return (
+                                        <div className="mb-10">
+                                            <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
+                                            <div className="grid grid-cols-4 gap-3">
+                                                {fullGallery.map((img, i) => (
+                                                    <div
+                                                        key={i}
+                                                        onClick={(e) => { e.stopPropagation(); openLightbox(fullGallery, i); }}
+                                                        className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
+                                                    >
+                                                        <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
+                                                    </div>
+                                                ))}
                                             </div>
-                                        );
-                                    })()}       </div>
+                                        </div>
+                                    );
+                                })()}
+                            </div>
 
                             <div className="flex flex-col gap-3">
                                 <Button
