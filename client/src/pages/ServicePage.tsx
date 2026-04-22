@@ -347,17 +347,13 @@ export default function ServicePage() {
                     <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
                         {/* Main Hero Image */}
                         <div 
-                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-pointer group/hero"
-                            onClick={() => {
-                                const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
-                                if (fullGallery.length > 0) openLightbox(fullGallery, 0);
-                            }}
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100"
                         >
                             {selectedSub?.image ? (
                                 <img 
                                     src={selectedSub.image} 
                                     alt={selectedSub.title} 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover/hero:scale-105"
+                                    className="w-full h-full object-cover"
                                     onError={(e) => {
                                         // Fallback if image fails to load
                                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';
@@ -372,11 +368,7 @@ export default function ServicePage() {
                                 </div>
                             )}
                             
-                            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/30 transform scale-90 group-hover/hero:scale-100 transition-transform duration-300">
-                                    <ZoomIn className="text-white w-6 h-6" />
-                                </div>
-                            </div>
+
                             
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
                             
