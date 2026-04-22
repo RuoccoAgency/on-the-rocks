@@ -354,13 +354,13 @@ export default function ServicePage() {
 
             {/* Modal Popup for Card Layout */}
             <Dialog open={!!selectedSub} onOpenChange={(open) => !open && setSelectedSub(null)}>
-                <DialogContent className="sm:max-w-[700px] w-[95vw] sm:w-full p-0 bg-white border-none rounded-3xl shadow-3xl overflow-hidden">
+                <DialogContent className="max-w-[95vw] sm:max-w-[700px] w-full max-h-[90vh] sm:max-h-[85vh] p-0 bg-white border-none rounded-[2rem] shadow-3xl overflow-hidden flex flex-col">
                     <DialogHeader className="sr-only">
                         <DialogTitle>{selectedSub?.title}</DialogTitle>
                         <DialogDescription>Dettagli del servizio {selectedSub?.title}</DialogDescription>
                     </DialogHeader>
                     
-                    <div className="max-h-[92vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none">
+                    <div className="flex-1 overflow-y-auto custom-scrollbar-v2 scroll-smooth outline-none">
                         {/* Main Hero Image - Static Cover (Allows scrolling) */}
                         <div 
                             className="relative h-56 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 select-none"
