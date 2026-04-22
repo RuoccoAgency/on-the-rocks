@@ -347,7 +347,7 @@ export default function ServicePage() {
                     <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
                         {/* Main Hero Image */}
                         <div 
-                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100"
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-default"
                         >
                             {selectedSub?.image ? (
                                 <img 
@@ -412,7 +412,7 @@ export default function ServicePage() {
                                 <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
                                 <div className="grid grid-cols-4 gap-3">
                                     {(() => {
-                                        const fullGallery = [selectedSub?.image, ...(selectedSub?.gallery || [])].filter(Boolean) as string[];
+                                        const fullGallery = (selectedSub?.gallery || []).filter(Boolean) as string[];
                                         return fullGallery.length > 0 ? (
                                             fullGallery.map((img, i) => (
                                                 <div 
