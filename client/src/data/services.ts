@@ -91,8 +91,17 @@ export const servicesData: ServiceCategory[] = [
             {
                 name: "Effetti Speciali",
                 items: [],
-                image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-                gallery: ["https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80"]
+                image: "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.30.jpeg",
+                gallery: [
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31.jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(1).jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(2).jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(3).jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.32.jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.33.jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.33%20(1).jpeg",
+                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.36.jpeg"
+                ]
             },
             {
                 name: "APEriWedding - Open Bar",
