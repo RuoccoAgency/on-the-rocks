@@ -221,14 +221,14 @@ export default function ServicePage() {
                                 </div>
 
                                 {/* APEriWedding Featured Image (Strictly Static) */}
-                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] pointer-events-none select-none">
+                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] select-none cursor-default">
                                     <img 
                                         src={apeImages[0]} 
                                         alt="APEriWedding Featured" 
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover pointer-events-none"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                    <div className="absolute bottom-10 left-10 text-white">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                                    <div className="absolute bottom-10 left-10 text-white pointer-events-none">
                                         <span className="text-primary font-bold text-xs uppercase tracking-[0.4em] mb-2 block">Premium Experience</span>
                                         <h3 className="text-3xl md:text-5xl font-serif font-bold uppercase">L'Arte dell'Aperitivo</h3>
                                     </div>
@@ -322,15 +322,15 @@ export default function ServicePage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8 }}
                                 viewport={{ once: true }}
-                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 pointer-events-none select-none"
+                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 select-none cursor-default"
                             >
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-300">
+                                <div className="absolute inset-0 flex items-center justify-center text-gray-300 pointer-events-none">
                                     <div className="flex flex-col items-center gap-4">
                                         <ImageIcon size={64} strokeWidth={1} />
                                         <span className="text-[10px] uppercase tracking-[0.4em]">Section Image Placeholder</span>
                                     </div>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
 
                                 {service.slug === 'idee-innovative' && (
                                     /* Additional Gallery Mockup for Innovative Ideas */
@@ -358,22 +358,22 @@ export default function ServicePage() {
                     </DialogHeader>
                     
                     <div className="max-h-[90vh] sm:max-h-[85vh] overflow-y-auto custom-scrollbar-v2 scroll-smooth">
-                        {/* Main Hero Image - Strictly Static & Non-Interactive */}
+                        {/* Main Hero Image - Static Cover (Allows scrolling) */}
                         <div 
-                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 pointer-events-none select-none touch-none"
+                            className="relative h-64 sm:h-80 bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 cursor-default select-none"
                         >
                             {selectedSub?.image ? (
                                 <img 
                                     src={selectedSub.image} 
                                     alt={selectedSub.title} 
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover pointer-events-none"
                                     onError={(e) => {
                                         // Fallback if image fails to load
                                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';
                                     }}
                                 />
                             ) : (
-                                <div className="flex flex-col items-center gap-4 py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+                                <div className="flex flex-col items-center gap-4 py-20 bg-gradient-to-br from-gray-50 to-white w-full pointer-events-none">
                                     <div className="p-5 bg-white rounded-full shadow-sm border border-gray-100">
                                         <ImageIcon size={48} strokeWidth={1} className="text-gray-200" />
                                     </div>
