@@ -163,7 +163,7 @@ export default function ServicePage() {
                                     className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
                                 >
                                     <div className="relative h-48 sm:h-64 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none">
+                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center pointer-events-none select-none">
                                             {item.image ? (
                                                 <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                                             ) : (
@@ -172,7 +172,6 @@ export default function ServicePage() {
                                                     <span className="text-[8px] uppercase tracking-[0.2em] text-gray-400">On The Rocks</span>
                                                 </div>
                                             )}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
                                     </div>
 
@@ -419,15 +418,22 @@ export default function ServicePage() {
                                     return (
                                         <div className="mb-10">
                                             <h4 className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400 mb-4 border-b pb-2">Dettagli Gallery</h4>
-                                            <div className="grid grid-cols-4 gap-3">
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                                 {fullGallery.map((img, i) => (
                                                     <div
                                                         key={i}
                                                         onClick={(e) => { e.stopPropagation(); openLightbox(fullGallery, i); }}
-                                                        className="aspect-square bg-gray-50 rounded-xl overflow-hidden border border-gray-100 group cursor-pointer"
+                                                        className="aspect-square bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 group cursor-pointer relative shadow-sm hover:shadow-md transition-all duration-300"
                                                     >
-                                                        <img src={img} alt={`${selectedSub.title} gallery ${i + 1}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
+                                                        <img 
+                                                            src={img} 
+                                                            alt={`${selectedSub.title} gallery ${i + 1}`} 
+                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                                                            onError={(e) => {
+                                                                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80";
+                                                            }}
+                                                        />
+                                                        <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
                                                     </div>
                                                 ))}
                                             </div>

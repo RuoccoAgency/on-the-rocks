@@ -125,7 +125,7 @@ export const servicesData: ServiceCategory[] = [
                 name: "Selezione Location",
                 items: [],
                 image: "/services/location-1.jpg",
-                gallery: ["/services/location-2.jpg"]
+                gallery: ["https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"]
             },
             {
                 name: "Analisi spese e piano di Budget",
