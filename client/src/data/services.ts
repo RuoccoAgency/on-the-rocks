@@ -38,7 +38,20 @@ export const servicesData: ServiceCategory[] = [
             },
             {
                 name: "Allestimento Sala",
-                items: [],
+                items: [],
+                image: "/Allestimento%20sala/IMG-20260411-WA0018.jpg",
+                gallery: [
+                    "/Allestimento%20sala/IMG-20260411-WA0018.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0026.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0044.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0056.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0057.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0058.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0066.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0067.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0068.jpg",
+                    "/Allestimento%20sala/IMG-20260411-WA0086.jpg"
+                ]
             },
             {
                 name: "Allestimento Taglio Torta",
