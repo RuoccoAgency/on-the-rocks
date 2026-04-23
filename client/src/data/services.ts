@@ -24,17 +24,51 @@ export const servicesData: ServiceCategory[] = [
                 name: "Consulenza Wedding Planner",
                 items: [],
             },
-            {
+            
+{
                 name: "Inviti e Partecipazioni",
-                items: [],
+                items: [],
+                image: "/inviti%20e%20partecipazioni/Copia di IMG-20260411-WA0039.jpg",
+                gallery: [
+                    "/inviti%20e%20partecipazioni/Copia di IMG-20260411-WA0039.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0026.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0028.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0035.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0038.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0044.jpg",
+                    "/inviti%20e%20partecipazioni/IMG-20260411-WA0084.jpg"
+                ]
             },
             {
                 name: "Gadget Personalizzati",
                 items: [],
             },
-            {
+            
+{
                 name: "Allestimento Cerimonia",
-                items: [],
+                items: [],
+                image: "/allestimento%20cerimonia/Copia di IMG-20260411-WA0055.jpg",
+                gallery: [
+                    "/allestimento%20cerimonia/Copia di IMG-20260411-WA0055.jpg",
+                    "/allestimento%20cerimonia/Copia di IMG-20260411-WA0060.jpg",
+                    "/allestimento%20cerimonia/Copia di IMG-20260411-WA0065.jpg",
+                    "/allestimento%20cerimonia/Copia di IMG-20260411-WA0086.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0027.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0029.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0032.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0034.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0036.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0040.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0041.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0042.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0043.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0045.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0046.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0051.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0112.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0113.jpg",
+                    "/allestimento%20cerimonia/IMG-20260411-WA0114.jpg"
+                ]
             },
             {
                 name: "Allestimento Sala",
@@ -78,9 +112,22 @@ export const servicesData: ServiceCategory[] = [
                     "/dj%20set%20animazione/IMG-20260411-WA0005.jpg"
                 ]
             },
-            {
+            
+{
                 name: "Effetti Speciali",
-                items: [],
+                items: [],
+                image: "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.30.jpeg",
+                gallery: [
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.30.jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.31 (1).jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.31 (2).jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.31 (3).jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.31.jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.32.jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.33 (1).jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.33.jpeg",
+                    "/effetti%20speciali/WhatsApp Image 2026-04-22 at 12.16.36.jpeg"
+                ]
             },
             {
                 name: "APEriWedding - Open Bar",
