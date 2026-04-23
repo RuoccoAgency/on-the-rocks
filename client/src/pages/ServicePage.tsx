@@ -107,15 +107,16 @@ export default function ServicePage() {
         "DJ set, musica e intrattenimento su misura",
     ];
 
-    const eighteenGalleryImages = Array.from(
-        new Set(
-            cardItems.flatMap((item) => {
-                const itemGallery = (item.gallery || []).filter(Boolean);
-                if (itemGallery.length > 0) return itemGallery;
-                return item.image ? [item.image] : [];
-            })
-        )
-    );
+    const eighteenGalleryImages = [
+        "/18 anni/IMG-20260411-WA0057.jpg",
+        "/18 anni/IMG-20260411-WA0058.jpg",
+        "/18 anni/IMG-20260411-WA0067.jpg",
+        "/18 anni/IMG-20260411-WA0068.jpg",
+        "/18 anni/IMG-20260411-WA0069.jpg",
+        "/18 anni/IMG-20260411-WA0071.jpg",
+        "/18 anni/IMG-20260411-WA0078.jpg",
+        "/18 anni/IMG-20260411-WA0081.jpg",
+    ];
 
     return (
         <div className="bg-white min-h-screen text-black overflow-x-hidden">
