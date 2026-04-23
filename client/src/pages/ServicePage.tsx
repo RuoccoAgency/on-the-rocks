@@ -88,6 +88,7 @@ export default function ServicePage() {
 
     // Determine layout type (Always use card layout now)
     const isCardLayout = true;
+    const isEighteenYearsService = service.slug === "18-anni";
 
     // Prepare items for card layout
     const cardItems = service.subcategories.map(sub => {
@@ -99,6 +100,22 @@ export default function ServicePage() {
             gallery: sub.gallery 
         };
     });
+
+    const eighteenServiceActivities = [
+        "Ideazione e coordinamento completo della festa",
+        "Allestimenti personalizzati per location e tavoli",
+        "DJ set, musica e intrattenimento su misura",
+    ];
+
+    const eighteenGalleryImages = Array.from(
+        new Set(
+            cardItems.flatMap((item) => {
+                const itemGallery = (item.gallery || []).filter(Boolean);
+                if (itemGallery.length > 0) return itemGallery;
+                return item.image ? [item.image] : [];
+            })
+        )
+    );
 
     return (
         <div className="bg-white min-h-screen text-black overflow-x-hidden">
@@ -137,73 +154,130 @@ export default function ServicePage() {
 
             {isCardLayout ? (
                 <>
-                /* Subcategories Grid Section (Cards with Modals) */
-                <section className="py-24 bg-[#fafafa]">
-                    <div className="container mx-auto px-6">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                            <div className="max-w-2xl">
-                                <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-tight">I Nostri Servizi</h2>
-                                <p className="text-gray-500 text-lg">Esplora le nostre subcategorie e scopri come possiamo rendere unico il tuo evento.</p>
-                            </div>
-                            <div className="hidden md:block">
-                                <span className="text-primary font-bold text-sm uppercase tracking-widest border-b-2 border-primary/20 pb-1">
-                                    {cardItems.length} Soluzioni Disponibili
-                                </span>
-                            </div>
-                        </div>
+                    {isEighteenYearsService ? (
+                        <section className="py-24 bg-[#fafafa]">
+                            <div className="container mx-auto px-6">
+                                <div className="max-w-3xl mb-14">
+                                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-tight">
+                                        Festa 18 Anni
+                                    </h2>
+                                    <p className="text-gray-600 text-lg leading-relaxed">
+                                        Creiamo feste di 18 anni eleganti, dinamiche e memorabili, curando ogni dettaglio
+                                        dalla progettazione iniziale alla realizzazione finale.
+                                    </p>
+                                </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-                            {cardItems.map((item, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: (idx % 3) * 0.1, duration: 0.5 }}
-                                    viewport={{ once: true }}
-                                    className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
-                                >
-                                    <div className="relative h-48 sm:h-64 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center pointer-events-none select-none">
-                                            {item.image ? (
-                                                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                                            ) : (
-                                                <div className="flex flex-col items-center gap-2">
-                                                    <ImageIcon size={40} strokeWidth={1} className="text-gray-300" />
-                                                    <span className="text-[8px] uppercase tracking-[0.2em] text-gray-400">On The Rocks</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
+                                <div className="mb-14">
+                                    <h3 className="text-xl md:text-2xl font-serif font-bold mb-5 uppercase tracking-tight">
+                                        Cosa possiamo fare
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        {eighteenServiceActivities.map((activity) => (
+                                            <li key={activity} className="flex items-center gap-3 text-gray-700">
+                                                <span className="w-2 h-2 rounded-full bg-primary" />
+                                                <span>{activity}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
 
-                                    <div className="p-8 flex flex-col flex-1">
-                                        <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
-                                            {item.title}
+                                {eighteenGalleryImages.length > 0 && (
+                                    <div>
+                                        <h3 className="text-xl md:text-2xl font-serif font-bold mb-6 uppercase tracking-tight">
+                                            Gallery
                                         </h3>
-                                        <div className="w-10 h-0.5 bg-gray-200 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-700" />
-                                        
-                                        <div className="mt-auto">
-                                            <Button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    setSelectedSub({
-                                                        title: item.title,
-                                                        parentService: service.name,
-                                                        image: item.image,
-                                                        gallery: item.gallery,
-                                                        description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
-                                                    });
-                                                }}
-                                                className="w-full bg-gray-50 hover:bg-primary text-gray-400 hover:text-white rounded-xl py-6 font-bold uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
-                                            >
-                                                Scopri di più <ArrowRight size={14} />
-                                            </Button>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {eighteenGalleryImages.map((img, i) => (
+                                                <motion.div
+                                                    key={img}
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    transition={{ delay: (i % 3) * 0.1, duration: 0.5 }}
+                                                    viewport={{ once: true }}
+                                                    onClick={() => openLightbox(eighteenGalleryImages, i)}
+                                                    className="relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group shadow-md hover:shadow-xl transition-all duration-500"
+                                                >
+                                                    <img
+                                                        src={img}
+                                                        alt={`18 anni gallery ${i + 1}`}
+                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                </motion.div>
+                                            ))}
                                         </div>
                                     </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                    </section>
+                                )}
+                            </div>
+                        </section>
+                    ) : (
+                        <section className="py-24 bg-[#fafafa]">
+                            <div className="container mx-auto px-6">
+                                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                                    <div className="max-w-2xl">
+                                        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 uppercase tracking-tight">I Nostri Servizi</h2>
+                                        <p className="text-gray-500 text-lg">Esplora le nostre subcategorie e scopri come possiamo rendere unico il tuo evento.</p>
+                                    </div>
+                                    <div className="hidden md:block">
+                                        <span className="text-primary font-bold text-sm uppercase tracking-widest border-b-2 border-primary/20 pb-1">
+                                            {cardItems.length} Soluzioni Disponibili
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                                    {cardItems.map((item, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: (idx % 3) * 0.1, duration: 0.5 }}
+                                            viewport={{ once: true }}
+                                            className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
+                                        >
+                                            <div className="relative h-48 sm:h-64 overflow-hidden">
+                                                <div className="absolute inset-0 bg-gray-100 flex items-center justify-center pointer-events-none select-none">
+                                                    {item.image ? (
+                                                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                                    ) : (
+                                                        <div className="flex flex-col items-center gap-2">
+                                                            <ImageIcon size={40} strokeWidth={1} className="text-gray-300" />
+                                                            <span className="text-[8px] uppercase tracking-[0.2em] text-gray-400">On The Rocks</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            <div className="p-8 flex flex-col flex-1">
+                                                <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
+                                                    {item.title}
+                                                </h3>
+                                                <div className="w-10 h-0.5 bg-gray-200 mb-6 group-hover:w-full group-hover:bg-primary transition-all duration-700" />
+
+                                                <div className="mt-auto">
+                                                    <Button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setSelectedSub({
+                                                                title: item.title,
+                                                                parentService: service.name,
+                                                                image: item.image,
+                                                                gallery: item.gallery,
+                                                                description: item.items.length > 0 ? `Include: ${item.items.join(', ')}` : undefined
+                                                            });
+                                                        }}
+                                                        className="w-full bg-gray-50 hover:bg-primary text-gray-400 hover:text-white rounded-xl py-6 font-bold uppercase tracking-widest text-[10px] transition-all flex items-center justify-center gap-2"
+                                                    >
+                                                        Scopri di più <ArrowRight size={14} />
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </section>
+                    )}
 
                     {service.slug === 'matrimoni' && (
                         <section className="py-32 bg-white overflow-hidden border-t border-gray-50">
