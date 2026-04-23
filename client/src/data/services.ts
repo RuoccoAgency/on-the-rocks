@@ -26,25 +26,19 @@ export const servicesData: ServiceCategory[] = [
             },
             {
                 name: "Inviti e Partecipazioni",
-                items: [],
-                image: "/services/inviti.jpg",
+                items: [],
             },
             {
                 name: "Gadget Personalizzati",
-                items: [],
-                image: "/services/gadget.jpg",
+                items: [],
             },
             {
                 name: "Allestimento Cerimonia",
-                items: [],
-                image: "/services/cerimonia-1.jpg",
-                gallery: ["/services/cerimonia-2.jpg", "/services/cerimonia-3.jpg"]
+                items: [],
             },
             {
                 name: "Allestimento Sala",
-                items: [],
-                image: "/services/sala.jpg",
-                gallery: ["/services/sala-2.jpg", "/services/sala-3.jpg", "/services/sala-4.jpg"]
+                items: [],
             },
             {
                 name: "Allestimento Taglio Torta",
@@ -64,23 +58,11 @@ export const servicesData: ServiceCategory[] = [
             },
             {
                 name: "Dj Set - Animazione",
-                items: [],
-                image: "/services/dj-set.jpg",
+                items: [],
             },
             {
                 name: "Effetti Speciali",
-                items: [],
-                image: "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.30.jpeg",
-                gallery: [
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31.jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(1).jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(2).jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.31%20(3).jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.32.jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.33.jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.33%20(1).jpeg",
-                    "/effetti%20speciali/WhatsApp%20Image%202026-04-22%20at%2012.16.36.jpeg"
-                ]
+                items: [],
             },
             {
                 name: "APEriWedding - Open Bar",
@@ -98,8 +80,7 @@ export const servicesData: ServiceCategory[] = [
             },
             {
                 name: "Selezione Location",
-                items: [],
-                image: "/services/location-1.jpg",
+                items: [],
             },
             {
                 name: "Analisi spese e piano di Budget",
@@ -121,20 +102,15 @@ export const servicesData: ServiceCategory[] = [
         subcategories: [
             {
                 name: "Noleggio e Montaggio impianti audio e luci",
-                items: [],
-                image: "/services/audio-luci.jpg",
-                gallery: ["/services/audio-luci-2.jpg"]
+                items: [],
             },
             {
                 name: "Noleggio e montaggio scenografie e luci architetturali",
-                items: [],
-                image: "/services/scenografia-1.jpg",
-                gallery: ["/services/scenografia-2.jpg", "/services/scenografia-3.jpg", "/services/scenografia-4.jpg"]
+                items: [],
             },
             {
                 name: "Noleggio e montaggio palchi",
-                items: [],
-                image: "/services/palchi.jpg",
+                items: [],
             },
         ],
     },
@@ -180,9 +156,7 @@ export const servicesData: ServiceCategory[] = [
             },
             {
                 name: "LIVE SHOW",
-                items: ["NaltroSound", "Unusual Live Band"],
-                image: "/services/liveshow-1.jpg",
-                gallery: ["/services/liveshow-2.jpg", "/services/liveshow-3.jpg"]
+                items: ["NaltroSound", "Unusual Live Band"],
             },
             {
                 name: "FOLK E POPOLARE",
