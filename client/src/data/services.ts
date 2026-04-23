@@ -69,9 +69,14 @@ export const servicesData: ServiceCategory[] = [
                 name: "Artisti",
                 items: [],
             },
-            {
+            
+{
                 name: "Dj Set - Animazione",
-                items: [],
+                items: [],
+                image: "/dj%20set%20animazione/IMG-20260411-WA0005.jpg",
+                gallery: [
+                    "/dj%20set%20animazione/IMG-20260411-WA0005.jpg"
+                ]
             },
             {
                 name: "Effetti Speciali",
@@ -117,9 +122,26 @@ export const servicesData: ServiceCategory[] = [
                 name: "Noleggio e Montaggio impianti audio e luci",
                 items: [],
             },
-            {
+            
+{
                 name: "Noleggio e montaggio scenografie e luci architetturali",
-                items: [],
+                items: [],
+                image: "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0056.jpg",
+                gallery: [
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0056.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0057.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0059.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0060.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0061.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0062.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0063.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0066.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0067.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0068.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0069.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0070.jpg",
+                    "/Audio,%20Luci%20e%20Regie/IMG-20260416-WA0071.jpg"
+                ]
             },
             {
                 name: "Noleggio e montaggio palchi",
@@ -167,13 +189,33 @@ export const servicesData: ServiceCategory[] = [
                 name: "ORCHESTRE SPETTACOLO",
                 items: ["MusicaMania"],
             },
-            {
+            
+{
                 name: "LIVE SHOW",
-                items: ["NaltroSound", "Unusual Live Band"],
+                items: ["NaltroSound", "Unusual Live Band"],
+                image: "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0003.jpg",
+                gallery: [
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0003.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0004.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0009.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0010.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0011.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0012.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260411-WA0033.jpg",
+                    "/Live%20Show%20e%20Cover%20Band/IMG-20260416-WA0064.jpg"
+                ]
             },
-            {
+            
+{
                 name: "FOLK E POPOLARE",
-                items: ["Musicastoria", "I Valcalore", "Kiepò"],
+                items: ["Musicastoria", "I Valcalore", "Kiepò"],
+                image: "/Folk%20e%20Popolare/IMG-20260411-WA0052.jpg",
+                gallery: [
+                    "/Folk%20e%20Popolare/IMG-20260411-WA0052.jpg",
+                    "/Folk%20e%20Popolare/IMG-20260411-WA0060.jpg",
+                    "/Folk%20e%20Popolare/IMG-20260411-WA0110.jpg",
+                    "/Folk%20e%20Popolare/IMG-20260411-WA0115.jpg"
+                ]
             },
         ],
     },
