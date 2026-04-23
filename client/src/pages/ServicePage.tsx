@@ -429,9 +429,6 @@ export default function ServicePage() {
                                                             src={img} 
                                                             alt={`${selectedSub.title} gallery ${i + 1}`} 
                                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                                                            onError={(e) => {
-                                                                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80";
-                                                            }}
                                                         />
                                                         <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" />
                                                     </div>
