@@ -163,7 +163,7 @@ export default function ServicePage() {
                                     className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 flex flex-col h-full"
                                 >
                                     <div className="relative h-48 sm:h-64 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
+                                        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none">
                                             {item.image ? (
                                                 <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                                             ) : (
@@ -227,7 +227,7 @@ export default function ServicePage() {
                                 </div>
 
                                 {/* APEriWedding Featured Image (Strictly Static) */}
-                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] select-none cursor-default">
+                                <div className="mb-12 rounded-[3rem] overflow-hidden shadow-2xl relative aspect-[21/9] select-none cursor-default pointer-events-none">
                                     <img 
                                         src={apeImages[0]} 
                                         alt="APEriWedding Featured" 
@@ -328,7 +328,7 @@ export default function ServicePage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8 }}
                                 viewport={{ once: true }}
-                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 select-none cursor-default"
+                                className="relative aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-black/10 select-none cursor-default pointer-events-none"
                             >
                                 <div className="absolute inset-0 flex items-center justify-center text-gray-300 pointer-events-none">
                                     <div className="flex flex-col items-center gap-4">
