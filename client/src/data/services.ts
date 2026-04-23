@@ -87,9 +87,20 @@ export const servicesData: ServiceCategory[] = [
                     "/Allestimento%20sala/IMG-20260411-WA0086.jpg"
                 ]
             },
-            {
+            
+{
                 name: "Allestimento Taglio Torta",
                 items: [],
+                image: "/taglio%20torta/Copia di IMG-20260411-WA0055.jpg",
+                gallery: [
+                    "/taglio%20torta/Copia di IMG-20260411-WA0055.jpg",
+                    "/taglio%20torta/Copia di IMG-20260411-WA0060.jpg",
+                    "/taglio%20torta/IMG-20260411-WA0034.jpg",
+                    "/taglio%20torta/IMG-20260411-WA0036.jpg",
+                    "/taglio%20torta/IMG-20260411-WA0045.jpg",
+                    "/taglio%20torta/IMG-20260411-WA0046.jpg",
+                    "/taglio%20torta/IMG-20260411-WA0051.jpg"
+                ]
             },
             {
                 name: "Confettata",
@@ -253,16 +264,10 @@ export const servicesData: ServiceCategory[] = [
                 ]
             },
             
+
 {
                 name: "FOLK E POPOLARE",
                 items: ["Musicastoria", "I Valcalore", "Kiepò"],
-                image: "/Folk%20e%20Popolare/IMG-20260411-WA0052.jpg",
-                gallery: [
-                    "/Folk%20e%20Popolare/IMG-20260411-WA0052.jpg",
-                    "/Folk%20e%20Popolare/IMG-20260411-WA0060.jpg",
-                    "/Folk%20e%20Popolare/IMG-20260411-WA0110.jpg",
-                    "/Folk%20e%20Popolare/IMG-20260411-WA0115.jpg"
-                ]
             },
         ],
     },
