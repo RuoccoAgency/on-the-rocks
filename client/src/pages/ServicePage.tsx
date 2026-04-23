@@ -370,7 +370,7 @@ export default function ServicePage() {
                             {selectedSub?.image ? (
                                 <div 
                                     className="absolute inset-0 bg-cover bg-center"
-                                    style={{ backgroundImage: `url(${selectedSub.image})` }}
+                                    style={{ backgroundImage: `url('${selectedSub.image}')` }}
                                 />
                             ) : (
                                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
