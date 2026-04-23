@@ -38,16 +38,17 @@ export const servicesData: ServiceCategory[] = [
                 name: "Allestimento Cerimonia",
                 items: [],
                 image: "/services/cerimonia-1.jpg",
-                gallery: ["/services/cerimonia-2.jpg"]
+                gallery: ["/services/cerimonia-2.jpg", "/services/cerimonia-3.jpg"]
             },
             {
                 name: "Allestimento Sala",
                 items: [],
-                image: "/services/sala.jpg",
+                image: "/services/sala.jpg",
+                gallery: ["/services/sala-2.jpg", "/services/sala-3.jpg", "/services/sala-4.jpg"]
             },
             {
                 name: "Allestimento Taglio Torta",
-                items: [],
+                items: [],
             },
             {
                 name: "Confettata",
